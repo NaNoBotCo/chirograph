@@ -1,0 +1,23 @@
+{
+  "name": "Jane Doe v. Roe Holdings",
+  "jurisdiction": "ca",
+  "court": "Superior Court of California, County of Alameda",
+  "court_tz": "America/Los_Angeles",
+  "reader_tz": "Europe/London",
+  "case_number": "26CV000000",
+  "trial_date": "",
+  "currency": "$",
+  "parties": {
+    "plaintiff": [
+      "Jane Doe"
+    ],
+    "defendant": [
+      "Roe Holdings, LLC"
+    ]
+  },
+  "identifiers": [
+    "26CV000000",
+    "Jane Doe",
+    "Roe Holdings"
+  ]
+}

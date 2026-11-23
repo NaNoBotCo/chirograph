@@ -1,0 +1,43 @@
+Prepared for the mediation session. Fictional example.
+SUPERIOR COURT OF CALIFORNIA, COUNTY OF ALAMEDA
+Jane Doe v. Roe Holdings — Case No. 26CV000000
+MEDIATION STATEMENT OF PLAINTIFF JANE DOE
+
+Mediator: Pat Example
+Session: Wed Sep 9 2026 at 09:30 court time, by video
+
+1. PARTIES
+Plaintiff Jane Doe sold a business to defendant Roe Holdings, LLC in 2024 and took back a note secured by a parcel in Alameda County.
+Defendant Roe Holdings, LLC is a California limited liability company. Richard Roe is its managing member and is not a party to the case.
+
+2. POSTURE OF THE CASE
+The complaint was filed in the Superior Court of California, County of Alameda, Case No. 26CV000000. Roe Holdings filed a cross-complaint. A case management conference is set for September 24, 2026. No trial date is set.
+
+3. FACTS
+The note called for twelve quarterly payments. Roe Holdings made seven and stopped in 2025.
+Roe Holdings says the business records it received at closing overstated two customer accounts, and it claims an offset.
+
+4. CLAIMS AND DAMAGES
+Claim | Basis | Amount
+Breach of the note | Five unpaid quarterly payments | $150,000
+Interest | Contract rate from each due date | $21,500
+Costs of suit | Filing and service fees to date | $1,850
+Total of the stated amounts |  | $173,350
+Roe Holdings' cross-complaint claims an offset of $70,000.
+
+5. OFFER HISTORY
+Date | From → To | Kind | Amount | Status
+Mon Aug 3 2026 | Jane Doe → Roe Holdings, LLC | letter | $240,000 | lapsed
+Wed Aug 12 2026 | Roe Holdings, LLC → Jane Doe | statutory offer (CCP §998) | $60,000 | open
+Wed Aug 26 2026 | Jane Doe → Roe Holdings, LLC | counter | $185,000 | open
+Last positions: plaintiff $185,000, defendant $60,000. Gap $125,000.
+
+6. TERMS SOUGHT
+(a) One payment by wire within 30 days of signing.
+(b) A release that runs to Roe Holdings, LLC.
+(c) Dismissal of the complaint and the cross-complaint with prejudice after payment.
+(d) The court to retain jurisdiction to enforce the settlement under Code of Civil Procedure section 664.6.
+
+Dated: September 4, 2026
+Jane Doe
+Plaintiff, self-represented

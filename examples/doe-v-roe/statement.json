@@ -1,0 +1,51 @@
+{
+  "title": "MEDIATION STATEMENT",
+  "for_party": "Plaintiff Jane Doe",
+  "header_note": "Prepared for the mediation session. Fictional example.",
+  "mediator": "Pat Example",
+  "session": {
+    "date": "2026-09-09",
+    "time": "09:30",
+    "place": "by video"
+  },
+  "parties": [
+    "Plaintiff Jane Doe sold a business to defendant Roe Holdings, LLC in 2024 and took back a note secured by a parcel in Alameda County.",
+    "Defendant Roe Holdings, LLC is a California limited liability company. Richard Roe is its managing member and is not a party to the case."
+  ],
+  "posture": [
+    "The complaint was filed in the Superior Court of California, County of Alameda, Case No. 26CV000000. Roe Holdings filed a cross-complaint. A case management conference is set for September 24, 2026. No trial date is set."
+  ],
+  "facts": [
+    "The note called for twelve quarterly payments. Roe Holdings made seven and stopped in 2025.",
+    "Roe Holdings says the business records it received at closing overstated two customer accounts, and it claims an offset."
+  ],
+  "claims": [
+    {
+      "claim": "Breach of the note",
+      "basis": "Five unpaid quarterly payments",
+      "amount": 150000
+    },
+    {
+      "claim": "Interest",
+      "basis": "Contract rate from each due date",
+      "amount": 21500
+    },
+    {
+      "claim": "Costs of suit",
+      "basis": "Filing and service fees to date",
+      "amount": 1850
+    }
+  ],
+  "claims_note": "Roe Holdings' cross-complaint claims an offset of $70,000.",
+  "terms_sought": [
+    "One payment by wire within 30 days of signing.",
+    "A release that runs to Roe Holdings, LLC.",
+    "Dismissal of the complaint and the cross-complaint with prejudice after payment.",
+    "The court to retain jurisdiction to enforce the settlement under Code of Civil Procedure section 664.6."
+  ],
+  "signer": {
+    "name": "Jane Doe",
+    "role": "Plaintiff, self-represented",
+    "date": "September 4, 2026"
+  }
+}

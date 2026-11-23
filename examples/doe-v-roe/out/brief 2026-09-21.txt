@@ -1,0 +1,43 @@
+BRIEF — Jane Doe v. Roe Holdings
+Court date Mon Sep 21 2026 (America/Los_Angeles); reader zone Europe/London
+
+Past its date, not finished
+  Thu Sep 17 2026 — Notice of settlement of the entire case [SERVED]
+      Due Thu Sep 17 2026 — settled Sep 17; written notice is filed and served immediately (Cal. Rules of Court, rule 3.1385(a)(1)).
+      End of Thu Sep 17 2026 court time (23:59) = Fri Sep 18 2026 07:59 in Europe/London.
+
+Today
+  Nothing dated today.
+
+Next 7 days
+  Thu Sep 24 2026 09:00 — Case management conference [ON CALENDAR]
+      Thu Sep 24 2026 09:00 court time — set by received/2026-08-20 notice of case management conference.txt. Stays ON CALENDAR until an order or the court's page, saved to disk, shows it is off.
+      Thu Sep 24 2026 09:00 court time = Thu Sep 24 2026 17:00 in Europe/London.
+  Thu Sep 24 2026 — Wire instructions to the paying side [SERVED]
+      Due Thu Sep 24 2026 — signed Sep 17 + 7 days (Agreement §1) = Thu Sep 24.
+      End of Thu Sep 24 2026 court time (23:59) = Fri Sep 25 2026 07:59 in Europe/London.
+  Thu Sep 24 2026 — IRS Form W-9 to the paying side [not started]
+      Due Thu Sep 24 2026 — signed Sep 17 + 7 days (Agreement §1) = Thu Sep 24.
+      End of Thu Sep 24 2026 court time (23:59) = Fri Sep 25 2026 07:59 in Europe/London.
+
+Clocks running
+  None.
+
+Tasks with no evidence on this disk
+  Notice of settlement of the entire case [SERVED] — next: FILED, due Thu Sep 17 2026
+  Payment of $120,000 by Roe Holdings, LLC (wire) [not started] — next: DONE, due Thu Oct 8 2026
+  Wire instructions to the paying side [SERVED] — next: DONE, due Thu Sep 24 2026
+  IRS Form W-9 to the paying side [not started] — next: BUILT, due Thu Sep 24 2026
+  Quitclaim deed signed before a notary or, for a signer abroad, a consular officer [not started] — next: BUILT, due Thu Oct 1 2026
+  Quitclaim deed dispatched by tracked courier [not started] — next: SERVED, due Thu Oct 1 2026
+  Quitclaim deed: outside date for delivery [not started] — next: DONE, due Thu Oct 15 2026
+  Withdrawal of the lis pendens (the recorded notice of the pending case), recorded [not started] — next: BUILT, due Sun Oct 18 2026
+  Request for dismissal of the entire case [not started] — next: BUILT, due Mon Nov 2 2026
+  Stipulation for the court to retain jurisdiction to enforce the settlement [not started] — next: BUILT, due Mon Nov 2 2026
+
+Hearings still ON CALENDAR
+  Case management conference — Thu Sep 24 2026 09:00
+      Thu Sep 24 2026 09:00 court time = Thu Sep 24 2026 17:00 in Europe/London.
+
+Offers open
+  None.

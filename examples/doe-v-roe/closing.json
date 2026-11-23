@@ -1,0 +1,267 @@
+{
+  "matter": "Jane Doe v. Roe Holdings",
+  "facts": {
+    "signed": "2026-09-17",
+    "agreement": "agreements/2026-09-17 settlement agreement.txt",
+    "conditional": false,
+    "payment": {
+      "amount": 120000,
+      "payor": "Roe Holdings, LLC",
+      "method": "wire",
+      "days": 21,
+      "cite": "Agreement §1"
+    },
+    "wire": {
+      "days": 7,
+      "cite": "Agreement §1"
+    },
+    "tax_form": {
+      "title": "IRS Form W-9",
+      "days": 7,
+      "cite": "Agreement §1"
+    },
+    "instruments": [
+      {
+        "title": "Quitclaim deed",
+        "signer_abroad": true,
+        "cite": "Agreement §6",
+        "sign": {
+          "days": 14,
+          "cite": "Agreement §6"
+        },
+        "dispatch": {
+          "days": 14,
+          "cite": "Agreement §6"
+        },
+        "outside": {
+          "days": 28,
+          "cite": "Agreement §6"
+        }
+      }
+    ],
+    "lis_pendens": {
+      "days": 10,
+      "after_date": "2026-10-08",
+      "trigger_phrase": "payment due",
+      "cite": "Agreement §7"
+    },
+    "retain_jurisdiction": true,
+    "hearings": [
+      {
+        "date": "2026-09-24",
+        "time": "09:00",
+        "title": "Case management conference",
+        "kind": "hearing",
+        "order": "received/2026-08-20 notice of case management conference.txt"
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": "notice",
+      "kind": "notice",
+      "title": "Notice of settlement of the entire case",
+      "date": "2026-09-17",
+      "time": "",
+      "line": "Due Thu Sep 17 2026 — settled Sep 17; written notice is filed and served immediately (Cal. Rules of Court, rule 3.1385(a)(1)).",
+      "notes": [
+        "Case management conference on Thu Sep 24 2026 falls within 10 days of settlement: the rule also calls for oral notice at once (Cal. Rules of Court, rule 3.1385(a)(1))."
+      ],
+      "rule": "ca.notice_of_settlement",
+      "chain": [
+        "BUILT",
+        "SIGNED",
+        "SERVED",
+        "FILED",
+        "DONE"
+      ],
+      "states": {
+        "BUILT": {
+          "evidence": "evidence/2026-09-17 notice of settlement - built.txt",
+          "on": "2026-09-17"
+        },
+        "SIGNED": {
+          "evidence": "evidence/2026-09-17 notice of settlement - signed.txt",
+          "on": "2026-09-17"
+        },
+        "SERVED": {
+          "evidence": "evidence/2026-09-18 notice of settlement - sent mail.txt",
+          "on": "2026-09-18"
+        }
+      }
+    },
+    {
+      "id": "payment",
+      "kind": "payment",
+      "title": "Payment of $120,000 by Roe Holdings, LLC (wire)",
+      "date": "2026-10-08",
+      "time": "",
+      "line": "Due Thu Oct 8 2026 — signed Sep 17 + 21 days (Agreement §1) = Thu Oct 8.",
+      "notes": [],
+      "rule": "",
+      "chain": [
+        "DONE"
+      ],
+      "states": {}
+    },
+    {
+      "id": "wire",
+      "kind": "wire",
+      "title": "Wire instructions to the paying side",
+      "date": "2026-09-24",
+      "time": "",
+      "line": "Due Thu Sep 24 2026 — signed Sep 17 + 7 days (Agreement §1) = Thu Sep 24.",
+      "notes": [],
+      "rule": "",
+      "chain": [
+        "BUILT",
+        "SERVED",
+        "DONE"
+      ],
+      "states": {
+        "BUILT": {
+          "evidence": "evidence/2026-09-21 wire instructions - sent mail.txt",
+          "on": "2026-09-21"
+        },
+        "SERVED": {
+          "evidence": "evidence/2026-09-21 wire instructions - sent mail.txt",
+          "on": "2026-09-21"
+        }
+      }
+    },
+    {
+      "id": "tax",
+      "kind": "tax",
+      "title": "IRS Form W-9 to the paying side",
+      "date": "2026-09-24",
+      "time": "",
+      "line": "Due Thu Sep 24 2026 — signed Sep 17 + 7 days (Agreement §1) = Thu Sep 24.",
+      "notes": [],
+      "rule": "",
+      "chain": [
+        "BUILT",
+        "SIGNED",
+        "SERVED",
+        "DONE"
+      ],
+      "states": {}
+    },
+    {
+      "id": "instrument-sign",
+      "kind": "instrument",
+      "title": "Quitclaim deed signed before a notary or, for a signer abroad, a consular officer",
+      "date": "2026-10-01",
+      "time": "",
+      "line": "Due Thu Oct 1 2026 — signed Sep 17 + 14 days (Agreement §6) = Thu Oct 1.",
+      "notes": [],
+      "rule": "",
+      "chain": [
+        "BUILT",
+        "SIGNED"
+      ],
+      "states": {}
+    },
+    {
+      "id": "instrument-dispatch",
+      "kind": "instrument",
+      "title": "Quitclaim deed dispatched by tracked courier",
+      "date": "2026-10-01",
+      "time": "",
+      "line": "Due Thu Oct 1 2026 — signed Sep 17 + 14 days (Agreement §6) = Thu Oct 1.",
+      "notes": [],
+      "rule": "",
+      "chain": [
+        "SERVED",
+        "DONE"
+      ],
+      "states": {}
+    },
+    {
+      "id": "instrument-outside",
+      "kind": "instrument",
+      "title": "Quitclaim deed: outside date for delivery",
+      "date": "2026-10-15",
+      "time": "",
+      "line": "Outside date Thu Oct 15 2026 — signed Sep 17 + 28 days (Agreement §6) = Thu Oct 15.",
+      "notes": [],
+      "rule": "",
+      "chain": [
+        "DONE"
+      ],
+      "states": {}
+    },
+    {
+      "id": "lis-pendens",
+      "kind": "lis_pendens",
+      "title": "Withdrawal of the lis pendens (the recorded notice of the pending case), recorded",
+      "date": "2026-10-18",
+      "time": "",
+      "line": "Due Sun Oct 18 2026 — payment due Oct 8 + 10 days (Agreement §7) = Sun Oct 18.",
+      "notes": [
+        "Sun Oct 18 2026 is a Sunday; this date does not roll. The next court day is Mon Oct 19 2026.",
+        "The agreement's own counting clause decides whether this date moves."
+      ],
+      "rule": "",
+      "chain": [
+        "BUILT",
+        "SIGNED",
+        "FILED",
+        "DONE"
+      ],
+      "states": {}
+    },
+    {
+      "id": "dismissal",
+      "kind": "dismissal",
+      "title": "Request for dismissal of the entire case",
+      "date": "2026-11-02",
+      "time": "",
+      "line": "Due Mon Nov 2 2026 — settled Sep 17 + 45 days (Cal. Rules of Court, rule 3.1385(b)) = Sun Nov 1; Sun Nov 1 is a Sunday; rolls to Mon Nov 2 (Cal. Rules of Court, rule 1.10(b)).",
+      "notes": [
+        "If the case cannot be dismissed in time, a notice and declaration asking for more time: Last day Mon Oct 26 2026 — last day to request dismissal Mon Nov 2 − 5 court days (Cal. Rules of Court, rule 3.1385(e)) = Mon Oct 26."
+      ],
+      "rule": "ca.dismissal",
+      "chain": [
+        "BUILT",
+        "SIGNED",
+        "SERVED",
+        "FILED",
+        "DONE"
+      ],
+      "states": {}
+    },
+    {
+      "id": "retain",
+      "kind": "retain",
+      "title": "Stipulation for the court to retain jurisdiction to enforce the settlement",
+      "date": "2026-11-02",
+      "time": "",
+      "line": "Due Mon Nov 2 2026 — on file before or with the request for dismissal; the court may dismiss without prejudice and retain jurisdiction when the parties stipulate in writing or orally before the court (CCP §664.6(a)).",
+      "notes": [],
+      "rule": "ca.retain_jurisdiction",
+      "chain": [
+        "BUILT",
+        "SIGNED",
+        "FILED",
+        "DONE"
+      ],
+      "states": {}
+    },
+    {
+      "id": "hearing-1",
+      "kind": "hearing",
+      "title": "Case management conference",
+      "date": "2026-09-24",
+      "time": "09:00",
+      "line": "Thu Sep 24 2026 09:00 court time — set by received/2026-08-20 notice of case management conference.txt. Stays ON CALENDAR until an order or the court's page, saved to disk, shows it is off.",
+      "notes": [],
+      "rule": "",
+      "chain": [
+        "OFF CALENDAR"
+      ],
+      "states": {},
+      "order": "received/2026-08-20 notice of case management conference.txt",
+      "hearing_kind": "hearing"
+    }
+  ]
+}

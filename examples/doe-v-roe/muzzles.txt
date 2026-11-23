@@ -1,0 +1,11 @@
+# One entry per line: a word, a phrase or a regular expression (case does not count).
+# `chirograph statement build` exits 1 when the statement contains any of them.
+# Lines starting with # are notes. These are example entries: words about motive,
+# bargaining pressure and hardship, which this matter's statement leaves out.
+# stylecheck: allow-start
+leverage
+hardship
+cannot afford
+\bpunish
+revenge
+# stylecheck: allow-end

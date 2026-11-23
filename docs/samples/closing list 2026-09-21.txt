@@ -1,0 +1,66 @@
+CLOSING — Jane Doe v. Roe Holdings (court date Mon Sep 21 2026)
+Signed Thu Sep 17 2026. Court zone America/Los_Angeles; reader zone Europe/London.
+
+notice  [SERVED]  Notice of settlement of the entire case · 4 days past
+    Due Thu Sep 17 2026 — settled Sep 17; written notice is filed and served immediately (Cal. Rules of Court, rule 3.1385(a)(1)).
+    End of Thu Sep 17 2026 court time (23:59) = Fri Sep 18 2026 07:59 in Europe/London.
+    Note: Case management conference on Thu Sep 24 2026 falls within 10 days of settlement: the rule also calls for oral notice at once (Cal. Rules of Court, rule 3.1385(a)(1)).
+    BUILT 2026-09-17 — evidence: evidence/2026-09-17 notice of settlement - built.txt
+    SIGNED 2026-09-17 — evidence: evidence/2026-09-17 notice of settlement - signed.txt
+    SERVED 2026-09-18 — evidence: evidence/2026-09-18 notice of settlement - sent mail.txt
+    FILED: no evidence on this disk
+
+payment  [not started]  Payment of $120,000 by Roe Holdings, LLC (wire) · in 17 days
+    Due Thu Oct 8 2026 — signed Sep 17 + 21 days (Agreement §1) = Thu Oct 8.
+    End of Thu Oct 8 2026 court time (23:59) = Fri Oct 9 2026 07:59 in Europe/London.
+    DONE: no evidence on this disk
+
+wire  [SERVED]  Wire instructions to the paying side · in 3 days
+    Due Thu Sep 24 2026 — signed Sep 17 + 7 days (Agreement §1) = Thu Sep 24.
+    End of Thu Sep 24 2026 court time (23:59) = Fri Sep 25 2026 07:59 in Europe/London.
+    BUILT 2026-09-21 — evidence: evidence/2026-09-21 wire instructions - sent mail.txt
+    SERVED 2026-09-21 — evidence: evidence/2026-09-21 wire instructions - sent mail.txt
+    DONE: no evidence on this disk
+
+tax  [not started]  IRS Form W-9 to the paying side · in 3 days
+    Due Thu Sep 24 2026 — signed Sep 17 + 7 days (Agreement §1) = Thu Sep 24.
+    End of Thu Sep 24 2026 court time (23:59) = Fri Sep 25 2026 07:59 in Europe/London.
+    BUILT: no evidence on this disk
+
+instrument-sign  [not started]  Quitclaim deed signed before a notary or, for a signer abroad, a consular officer · in 10 days
+    Due Thu Oct 1 2026 — signed Sep 17 + 14 days (Agreement §6) = Thu Oct 1.
+    End of Thu Oct 1 2026 court time (23:59) = Fri Oct 2 2026 07:59 in Europe/London.
+    BUILT: no evidence on this disk
+
+instrument-dispatch  [not started]  Quitclaim deed dispatched by tracked courier · in 10 days
+    Due Thu Oct 1 2026 — signed Sep 17 + 14 days (Agreement §6) = Thu Oct 1.
+    End of Thu Oct 1 2026 court time (23:59) = Fri Oct 2 2026 07:59 in Europe/London.
+    SERVED: no evidence on this disk
+
+instrument-outside  [not started]  Quitclaim deed: outside date for delivery · in 24 days
+    Outside date Thu Oct 15 2026 — signed Sep 17 + 28 days (Agreement §6) = Thu Oct 15.
+    End of Thu Oct 15 2026 court time (23:59) = Fri Oct 16 2026 07:59 in Europe/London.
+    DONE: no evidence on this disk
+
+lis-pendens  [not started]  Withdrawal of the lis pendens (the recorded notice of the pending case), recorded · in 27 days
+    Due Sun Oct 18 2026 — payment due Oct 8 + 10 days (Agreement §7) = Sun Oct 18.
+    End of Sun Oct 18 2026 court time (23:59) = Mon Oct 19 2026 07:59 in Europe/London.
+    Note: Sun Oct 18 2026 is a Sunday; this date does not roll. The next court day is Mon Oct 19 2026.
+    Note: The agreement's own counting clause decides whether this date moves.
+    BUILT: no evidence on this disk
+
+dismissal  [not started]  Request for dismissal of the entire case · in 42 days
+    Due Mon Nov 2 2026 — settled Sep 17 + 45 days (Cal. Rules of Court, rule 3.1385(b)) = Sun Nov 1; Sun Nov 1 is a Sunday; rolls to Mon Nov 2 (Cal. Rules of Court, rule 1.10(b)).
+    End of Mon Nov 2 2026 court time (23:59) = Tue Nov 3 2026 07:59 in Europe/London.
+    Note: If the case cannot be dismissed in time, a notice and declaration asking for more time: Last day Mon Oct 26 2026 — last day to request dismissal Mon Nov 2 − 5 court days (Cal. Rules of Court, rule 3.1385(e)) = Mon Oct 26.
+    BUILT: no evidence on this disk
+
+retain  [not started]  Stipulation for the court to retain jurisdiction to enforce the settlement · in 42 days
+    Due Mon Nov 2 2026 — on file before or with the request for dismissal; the court may dismiss without prejudice and retain jurisdiction when the parties stipulate in writing or orally before the court (CCP §664.6(a)).
+    End of Mon Nov 2 2026 court time (23:59) = Tue Nov 3 2026 07:59 in Europe/London.
+    BUILT: no evidence on this disk
+
+hearing-1  [ON CALENDAR]  Case management conference · in 3 days
+    Thu Sep 24 2026 09:00 court time — set by received/2026-08-20 notice of case management conference.txt. Stays ON CALENDAR until an order or the court's page, saved to disk, shows it is off.
+    Thu Sep 24 2026 09:00 court time = Thu Sep 24 2026 17:00 in Europe/London.
+    OFF CALENDAR: no evidence on this disk

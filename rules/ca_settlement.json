@@ -1,0 +1,264 @@
+{
+  "jurisdiction": "ca",
+  "name": "California superior court: settlement",
+  "holidays": "ca",
+  "court_tz": "America/Los_Angeles",
+  "note": "One entry per rule. `verify` says whether the rule's text was read at its official page, and on what date, or written from memory. Read a rule again before relying on its date: statutes and rules of court change.",
+  "counting": {
+    "roll_cite": "Cal. Rules of Court, rule 1.10(b)",
+    "roll_text": "Unless otherwise provided by law, if the last day for the performance of any act that is required by these rules to be performed within a specific period of time falls on a Saturday, Sunday, or other legal holiday, the period is extended to and includes the next day that is not a holiday.",
+    "source": "https://courts.ca.gov/cms/rules/index/one/rule1_10",
+    "verify": "read https://courts.ca.gov/cms/rules/index/one/rule1_10 2026-11-23",
+    "note": "Rule 1.10 covers acts required by the Rules of Court (the 45 days in rule 3.1385). The 30 days in CCP §998 come from a statute, so this table does not roll that date; it prints the next court day in a note."
+  },
+  "methods": {
+    "personal": {
+      "label": "personal delivery",
+      "short": "personal delivery",
+      "add": 0,
+      "unit": "calendar",
+      "cite": "CCP §1011",
+      "verify": "from memory, not read"
+    },
+    "mail": {
+      "label": "mail",
+      "short": "mail within California",
+      "add": 5,
+      "unit": "calendar",
+      "cite": "CCP §1013(a)",
+      "verify": "read https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=1013. 2026-11-23"
+    },
+    "mail_out_of_state": {
+      "label": "mail to an address outside California",
+      "short": "mail outside California",
+      "add": 10,
+      "unit": "calendar",
+      "cite": "CCP §1013(a)",
+      "verify": "read https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=1013. 2026-11-23"
+    },
+    "mail_confidential_address": {
+      "label": "mail to the Secretary of State's address confidentiality program",
+      "short": "mail to the address confidentiality program",
+      "add": 12,
+      "unit": "calendar",
+      "cite": "CCP §1013(a)",
+      "verify": "read https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=1013. 2026-11-23"
+    },
+    "mail_out_of_us": {
+      "label": "mail to an address outside the United States",
+      "short": "mail outside the United States",
+      "add": 20,
+      "unit": "calendar",
+      "cite": "CCP §1013(a)",
+      "verify": "read https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=1013. 2026-11-23"
+    },
+    "overnight": {
+      "label": "overnight delivery",
+      "short": "overnight delivery",
+      "add": 2,
+      "unit": "court",
+      "cite": "CCP §1013(c)",
+      "verify": "from memory, not read"
+    },
+    "fax": {
+      "label": "fax",
+      "short": "fax",
+      "add": 2,
+      "unit": "court",
+      "cite": "CCP §1013(e)",
+      "verify": "from memory, not read"
+    },
+    "email": {
+      "label": "email",
+      "short": "e-service",
+      "add": 2,
+      "unit": "court",
+      "cite": "CCP §1010.6(a)(3)(B)",
+      "verify": "read https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=1010.6. 2026-11-23"
+    }
+  },
+  "aliases": {
+    "electronic": "email",
+    "e-service": "email",
+    "eservice": "email",
+    "efile": "email",
+    "e-mail": "email",
+    "hand": "personal",
+    "in-person": "personal",
+    "express": "overnight",
+    "fedex": "overnight",
+    "ups": "overnight",
+    "courier": "overnight",
+    "mail-ca": "mail",
+    "mail-out-of-state": "mail_out_of_state",
+    "mail-foreign": "mail_out_of_us"
+  },
+  "rules": [
+    {
+      "id": "ca.998_lapse",
+      "label": "A statutory offer to compromise lapses",
+      "direction": "after",
+      "trigger": "the offer is made",
+      "days": 30,
+      "unit": "calendar",
+      "cite": "CCP §998(b)(2)",
+      "text": "If the offer is not accepted prior to trial or arbitration or within 30 days after it is made, whichever occurs first, it shall be deemed withdrawn, and cannot be given in evidence upon the trial or arbitration.",
+      "bounded_by": "trial",
+      "roll": "note",
+      "amended": "Stats. 2024, Ch. 444, Sec. 2 (SB 577), effective January 1, 2025",
+      "source": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=998.",
+      "verify": "read https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=998. 2026-11-23",
+      "note": "This table does not treat a counter or a rejection as ending a statutory offer: the clock is shown until its date passes or the offer is accepted or withdrawn. Whether a counter or a rejection ends the offer is a case-law question; from memory, not read."
+    },
+    {
+      "id": "ca.998_service_window",
+      "label": "Last day to serve a statutory offer before trial or arbitration",
+      "direction": "before",
+      "trigger": "commencement of trial or arbitration",
+      "days": 10,
+      "unit": "calendar",
+      "cite": "CCP §998(b)",
+      "text": "Not less than 10 days prior to commencement of trial or arbitration (as provided in Section 1281 or 1295) of a dispute to be resolved by arbitration, any party may serve an offer in writing upon any other party to the action to allow judgment to be taken or an award to be entered in accordance with the terms and conditions stated at that time.",
+      "source": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=998.",
+      "verify": "read https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=998. 2026-11-23"
+    },
+    {
+      "id": "ca.998_service_extension",
+      "label": "Extension of the 30 days when the offer is served by mail or by electronic means",
+      "optional": true,
+      "direction": "after",
+      "trigger": "the offer is made",
+      "days": 0,
+      "unit": "calendar",
+      "cite": "CCP §1013(a); CCP §1010.6(a)(3)(B)",
+      "authority": "Poster v. Southern California Rapid Transit Dist. (1990) 52 Cal.3d 266",
+      "text": "CCP §1013(a) and §1010.6(a)(3)(B) extend \"any right or duty to do any act or make any response within any period or on a date certain after service of the document\". Whether that extension reaches the 30 days in §998 is a question of case law. This table does not answer it: the offer clock leaves the extension off unless the offer is entered with --extend.",
+      "source": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=1013.",
+      "verify": "from memory, not read (the Poster case and what it decided); the two statutes' text read at leginfo.legislature.ca.gov 2026-11-23"
+    },
+    {
+      "id": "ca.notice_of_settlement",
+      "label": "Written notice of settlement of the entire case, filed and served",
+      "direction": "after",
+      "trigger": "the case settles",
+      "days": 0,
+      "unit": "calendar",
+      "cite": "Cal. Rules of Court, rule 3.1385(a)(1)",
+      "text": "If an entire case is settled or otherwise disposed of, each plaintiff or other party seeking affirmative relief must immediately file written notice of the settlement or other disposition with the court and serve the notice on all parties and any arbitrator or other court-connected alternative dispute resolution (ADR) neutral involved in the case.",
+      "source": "https://courts.ca.gov/cms/rules/index/three/rule3_1385",
+      "verify": "read https://courts.ca.gov/cms/rules/index/three/rule3_1385 2026-11-23"
+    },
+    {
+      "id": "ca.oral_notice_window",
+      "label": "Oral notice when a hearing, conference or trial is set within 10 days",
+      "direction": "after",
+      "trigger": "the case settles",
+      "days": 10,
+      "unit": "calendar",
+      "cite": "Cal. Rules of Court, rule 3.1385(a)(1)",
+      "text": "Each plaintiff or other party seeking affirmative relief must also immediately give oral notice to all of the above if a hearing, conference, or trial is scheduled to take place within 10 days.",
+      "source": "https://courts.ca.gov/cms/rules/index/three/rule3_1385",
+      "verify": "read https://courts.ca.gov/cms/rules/index/three/rule3_1385 2026-11-23"
+    },
+    {
+      "id": "ca.neutral_notice",
+      "label": "Notice to an arbitrator or court-connected neutral before a scheduled session",
+      "direction": "before",
+      "trigger": "the scheduled hearing or session with the neutral",
+      "days": 2,
+      "unit": "calendar",
+      "cite": "Cal. Rules of Court, rule 3.1385(a)(2)",
+      "text": "If the plaintiff or other party seeking affirmative relief does not notify an arbitrator or other court-connected ADR neutral involved in the case of a settlement at least 2 days before the scheduled hearing or session with that arbitrator or neutral, the court may order the party to compensate the arbitrator or other neutral for the scheduled hearing time.",
+      "source": "https://courts.ca.gov/cms/rules/index/three/rule3_1385",
+      "verify": "read https://courts.ca.gov/cms/rules/index/three/rule3_1385 2026-11-23"
+    },
+    {
+      "id": "ca.dismissal",
+      "label": "Request for dismissal of the entire case, served and filed",
+      "direction": "after",
+      "trigger": "the date of settlement",
+      "days": 45,
+      "unit": "calendar",
+      "cite": "Cal. Rules of Court, rule 3.1385(b)",
+      "text": "Except as provided in (c) or (d), each plaintiff or other party seeking affirmative relief must serve and file a request for dismissal of the entire case within 45 days after the date of settlement of the case. If the plaintiff or other party required to serve and file the request for dismissal does not do so, the court must dismiss the entire case 45 days after it receives notice of settlement unless good cause is shown why the case should not be dismissed.",
+      "roll": "apply",
+      "source": "https://courts.ca.gov/cms/rules/index/three/rule3_1385",
+      "verify": "read https://courts.ca.gov/cms/rules/index/three/rule3_1385 2026-11-23"
+    },
+    {
+      "id": "ca.conditional_notice",
+      "label": "Notice of conditional settlement names the date by which the dismissal is to be filed",
+      "direction": "after",
+      "trigger": "the case settles on terms not to be performed within 45 days",
+      "days": 0,
+      "unit": "calendar",
+      "cite": "Cal. Rules of Court, rule 3.1385(c)(1)",
+      "text": "If the settlement agreement conditions dismissal of the entire case on the satisfactory completion of specified terms that are not to be performed within 45 days of the settlement, including payment in installment payments, the notice of conditional settlement served and filed by each plaintiff or other party seeking affirmative relief must specify the date by which the dismissal is to be filed.",
+      "source": "https://courts.ca.gov/cms/rules/index/three/rule3_1385",
+      "verify": "read https://courts.ca.gov/cms/rules/index/three/rule3_1385 2026-11-23"
+    },
+    {
+      "id": "ca.conditional_dismissal",
+      "label": "Court dismisses when no request follows the dismissal date in a notice of conditional settlement",
+      "direction": "after",
+      "trigger": "the dismissal date specified in the notice",
+      "days": 45,
+      "unit": "calendar",
+      "cite": "Cal. Rules of Court, rule 3.1385(c)(2)",
+      "text": "If the plaintiff or other party required to serve and file a request for dismissal within 45 days after the dismissal date specified in the notice does not do so, the court must dismiss the entire case unless good cause is shown why the case should not be dismissed.",
+      "roll": "apply",
+      "source": "https://courts.ca.gov/cms/rules/index/three/rule3_1385",
+      "verify": "read https://courts.ca.gov/cms/rules/index/three/rule3_1385 2026-11-23"
+    },
+    {
+      "id": "ca.conditional_hearings",
+      "label": "Hearings vacated on the filing of a notice of conditional settlement",
+      "direction": "after",
+      "trigger": "the notice of conditional settlement is filed",
+      "days": 0,
+      "unit": "calendar",
+      "cite": "Cal. Rules of Court, rule 3.1385(c)(3)",
+      "text": "Except as provided in (B), on the filing of the notice of conditional settlement, the court must vacate all hearings and other proceedings requiring the appearance of a party and may not set any hearing or other proceeding requiring the appearance of a party earlier than 45 days after the dismissal date specified in the notice, unless requested by a party.",
+      "source": "https://courts.ca.gov/cms/rules/index/three/rule3_1385",
+      "verify": "read https://courts.ca.gov/cms/rules/index/three/rule3_1385 2026-11-23"
+    },
+    {
+      "id": "ca.more_time",
+      "label": "Notice and declaration asking for more time to complete the settlement",
+      "direction": "before",
+      "trigger": "the time for requesting dismissal elapses",
+      "days": 5,
+      "unit": "court",
+      "cite": "Cal. Rules of Court, rule 3.1385(e)",
+      "text": "The notice and a supporting declaration must be served and filed at least 5 court days before the time for requesting dismissal has elapsed.",
+      "source": "https://courts.ca.gov/cms/rules/index/three/rule3_1385",
+      "verify": "read https://courts.ca.gov/cms/rules/index/three/rule3_1385 2026-11-23"
+    },
+    {
+      "id": "ca.retain_jurisdiction",
+      "label": "Stipulation for the court to dismiss without prejudice and retain jurisdiction to enforce the settlement",
+      "direction": "none",
+      "trigger": "before the case is dismissed",
+      "days": 0,
+      "unit": "calendar",
+      "cite": "CCP §664.6(a)",
+      "text": "If the parties to the settlement agreement or their counsel stipulate in writing or orally before the court, the court may dismiss the case as to the settling parties without prejudice and retain jurisdiction over the parties to enforce the settlement until performance in full of the terms of the settlement.",
+      "amended": "Stats. 2026, Ch. 907, Sec. 1 (AB 1908), effective September 30, 2026",
+      "source": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=664.6.",
+      "verify": "read https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=664.6. 2026-11-23"
+    },
+    {
+      "id": "ca.general_release",
+      "label": "What a general release does not reach unless the parties waive this section",
+      "direction": "none",
+      "trigger": "a general release is signed",
+      "days": 0,
+      "unit": "calendar",
+      "cite": "Civ. Code §1542",
+      "text": "A general release does not extend to claims that the creditor or releasing party does not know or suspect to exist in his or her favor at the time of executing the release and that, if known by him or her, would have materially affected his or her settlement with the debtor or released party.",
+      "amended": "Stats. 2018, Ch. 157, Sec. 2 (SB 1431), effective January 1, 2019",
+      "source": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1542.",
+      "verify": "read https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1542. 2026-11-23"
+    }
+  ]
+}
