@@ -1,0 +1,26 @@
+OFFERS — Jane Doe v. Roe Holdings (court date Fri Aug 28 2026)
+
+O1   Mon Aug 3 2026   Jane Doe → Roe Holdings, LLC   letter   $240,000   LAPSED
+     Terms: Paid within 30 days; release of Roe Holdings, LLC only.
+     Document: offers/2026-08-03 demand letter.txt
+     Lapsed Mon Aug 17 2026 at 17:00 court time — expiry stated in the offer (offers/2026-08-03 demand letter.txt).
+
+O2   Wed Aug 12 2026   Roe Holdings, LLC → Jane Doe   statutory offer (CCP §998)   $60,000   OPEN
+     Terms: Judgment for the sum; each side bears its own costs.
+     Document: offers/2026-08-12 offer to compromise.txt
+
+O3   Wed Aug 26 2026   Jane Doe → Roe Holdings, LLC   counter   $185,000   OPEN
+     Answers O2.
+     Terms: Paid within 30 days; mutual releases.
+     Document: offers/2026-08-26 counter letter.txt
+
+Positions
+  Plaintiff (Jane Doe): $185,000 — O3, Wed Aug 26 2026 (OPEN)
+  Defendant (Roe Holdings, LLC): $60,000 — O2, Wed Aug 12 2026 (OPEN)
+  Gap $125,000 · midpoint $122,500
+
+Clocks running
+  O2: Lapses Fri Sep 11 2026 — made Aug 12 + 30 days (CCP §998(b)(2)) = Fri Sep 11.
+      End of Fri Sep 11 2026 court time (23:59) = Sat Sep 12 2026 07:59 in Europe/London.
+      Note: Served by email. This date does not add the 2 court days in CCP §1010.6(a)(3)(B); whether that extension reaches the 30 days is a case-law question the rule table leaves open (from memory, not read). `--extend` applies it.
+  O3: no expiry stated and no rule supplies one.

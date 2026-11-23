@@ -1,0 +1,88 @@
+TERMS — 2026-09-17 settlement agreement.pdf (2 pages read, 2,785 characters)
+
+Payment
+  FOUND  Payment amount — p. 1:11
+         "1. Settlement Payment. Roe Holdings shall pay Doe the sum of $120,000 (the "Settlement Payment") by wire transfer within twenty-one (21) calendar days after the Effective Date. Within seven (7) days after the Effective Date, Doe shall send …"
+  FOUND  Who pays — p. 1:11
+         "1. Settlement Payment. Roe Holdings shall pay Doe the sum of $120,000 (the "Settlement Payment") by wire transfer within twenty-one (21) calendar days after the Effective Date. Within seven (7) days after the Effective Date, Doe shall send …"
+  FOUND  Payment due date — p. 1:11; also p. 1:12
+         "1. Settlement Payment. Roe Holdings shall pay Doe the sum of $120,000 (the "Settlement Payment") by wire transfer within twenty-one (21) calendar days after the Effective Date. Within seven (7) days after the Effective Date, Doe shall send …"
+  FOUND  Payment method — p. 1:12; also p. 1:13
+         "Payment") by wire transfer within twenty-one (21) calendar days after the Effective Date. Within seven (7) days after the Effective Date, Doe shall send wire instructions and a completed IRS Form W-9 to counsel for Roe Holdings. 2. Release …"
+
+Release
+  FOUND  Release of claims — p. 1:15; also p. 1:16, p. 1:18
+         "2. Release by Doe. Upon receipt of the Settlement Payment, Doe releases and forever discharges Roe Holdings and Mr. Roe, and their respective officers, members, agents and insurers, from all claims, demands and causes of action arising out …"
+  —      Mutual release — not found in this text
+  FOUND  Waiver of Civil Code §1542 (unknown claims) — p. 1:20
+         "4. Unknown Claims. Each Party waives the protection of California Civil Code section 1542. 5. Dismissal. Within five (5) court days after receipt of the Settlement Payment, Doe shall file a request for dismissal of the complaint with …"
+  —      No admission of liability — not found in this text
+
+Dismissal
+  FOUND  Dismissal of the case — p. 1:21; also p. 1:22, p. 1:23
+         "5. Dismissal. Within five (5) court days after receipt of the Settlement Payment, Doe shall file a request for dismissal of the complaint with prejudice, and Roe Holdings shall file a request for dismissal of the cross-complaint with …"
+  FOUND  Dismissal with prejudice — p. 1:22; also p. 1:23
+         "file a request for dismissal of the complaint with prejudice, and Roe Holdings shall file a request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign …"
+  —      Dismissal without prejudice — not found in this text
+  FOUND  Dismissal names the complaint — p. 1:22
+         "file a request for dismissal of the complaint with prejudice, and Roe Holdings shall file a request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign …"
+  FOUND  Dismissal names the cross-complaint — p. 1:22; also p. 1:23
+         "file a request for dismissal of the complaint with prejudice, and Roe Holdings shall file a request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign …"
+  FOUND  Request for dismissal: who files, and when — p. 1:22; also p. 1:23
+         "file a request for dismissal of the complaint with prejudice, and Roe Holdings shall file a request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign …"
+  FOUND  Withdrawal of the lis pendens (recorded notice of the pending case) — p. 1:10; also p. 1:29, p. 1:30
+         "B. Doe recorded a lis pendens against the parcel described in Exhibit A. 1. Settlement Payment. Roe Holdings shall pay Doe the sum of $120,000 (the "Settlement Payment") by wire transfer within twenty-one (21) calendar days after the …"
+
+Property
+  FOUND  Transfer instrument (deed, assignment, bill of sale) — p. 1:24; also p. 1:25, p. 1:26, p. 1:27
+         "6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign a quitclaim deed for the parcel described in Exhibit A before a notary public or, if she is outside the United States, a consular officer, and shall send …"
+  FOUND  Notarisation, and how a signer abroad signs — p. 1:25; also p. 1:26
+         "quitclaim deed for the parcel described in Exhibit A before a notary public or, if she is outside the United States, a consular officer, and shall send the signed deed to counsel for Roe Holdings by tracked courier. The outside date for …"
+  FOUND  Recording — p. 1:30
+         "record a withdrawal of the lis pendens with the county recorder. 8. Enforcement. The Parties stipulate that the Court shall retain jurisdiction under Code of Civil Procedure section 664.6 to enforce this Agreement. Each Party shall bear …"
+
+Tax
+  FOUND  Tax allocation and tax advice — p. 2:2
+         "9. Taxes. No Party makes a representation about the tax treatment of the Settlement Payment. 10. General. This Agreement is the entire agreement of the Parties. It is governed by the laws of the State of California. It may be signed in …"
+  FOUND  Tax reporting forms — p. 1:14
+         "completed IRS Form W-9 to counsel for Roe Holdings. 2. Release by Doe. Upon receipt of the Settlement Payment, Doe releases and forever discharges Roe Holdings and Mr. Roe, and their respective officers, members, agents and insurers, from …"
+
+Conduct after signing
+  —      Confidentiality — not found in this text
+  —      Non-disparagement — not found in this text
+
+Enforcement
+  FOUND  Court retains jurisdiction (CCP §664.6) — p. 1:31; also p. 1:32
+         "8. Enforcement. The Parties stipulate that the Court shall retain jurisdiction under Code of Civil Procedure section 664.6 to enforce this Agreement. Each Party shall bear its own"
+  FOUND  Fees and costs — p. 2:1
+         "attorneys' fees and costs. 9. Taxes. No Party makes a representation about the tax treatment of the Settlement Payment. 10. General. This Agreement is the entire agreement of the Parties. It is governed by the laws of the State of …"
+  —      Liens — not found in this text
+  —      Cure period after a default — not found in this text
+  FOUND  Time is of the essence — p. 2:5
+         "signature. Time is of the essence."
+
+Form of the agreement
+  FOUND  Counterparts — p. 2:4
+         "laws of the State of California. It may be signed in counterparts and by electronic signature. Time is of the essence."
+  FOUND  Electronic signature — p. 2:4
+         "laws of the State of California. It may be signed in counterparts and by electronic signature. Time is of the essence."
+  FOUND  Integration (the whole agreement is in this document) — p. 2:3
+         "10. General. This Agreement is the entire agreement of the Parties. It is governed by the laws of the State of California. It may be signed in counterparts and by electronic signature. Time is of the essence."
+  FOUND  Governing law — p. 2:3; also p. 2:4
+         "10. General. This Agreement is the entire agreement of the Parties. It is governed by the laws of the State of California. It may be signed in counterparts and by electronic signature. Time is of the essence."
+
+Release, read closely
+  p. 1:15  "2. Release by Doe. Upon receipt of the Settlement Payment, Doe releases and forever discharges Roe Holdings and Mr. Roe, and their respective officers, members, agents and insurers, from all claims, demands and causes of action arising out of the Action."
+      releasing: Jane Doe
+      released: Roe Holdings, LLC; Richard Roe · classes: agents, insurers, officers, members
+  p. 1:18  "3. Release by Roe Holdings. Roe Holdings releases and forever discharges Doe, and her heirs and assigns, from all claims, demands and causes of action arising out of the Action."
+      releasing: Roe Holdings, LLC
+      released: Jane Doe · classes: heirs, assigns
+  Released, all clauses: Roe Holdings, LLC; Richard Roe; Jane Doe
+  Classes also released: agents, insurers, officers, members, heirs, assigns
+  Mutual release wording: not found in this text
+  Defined parties: Jane Doe (Doe); Roe Holdings, LLC (Roe Holdings); Richard Roe (Mr. Roe)
+
+CHECK: --release-only Roe Holdings, LLC: the release also names Richard Roe.
+
+Exit code 1.

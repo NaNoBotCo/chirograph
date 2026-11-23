@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+"""Run chirograph from anywhere: bin/chirograph <command>. Add this folder to PATH, or symlink the file."""
+import os
+import sys
+
+here = os.path.dirname(os.path.realpath(__file__))
+sys.path.insert(0, os.path.dirname(here))
+
+from chirograph.cli import main  # noqa: E402
+
+sys.exit(main())

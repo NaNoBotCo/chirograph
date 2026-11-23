@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chirograph</title>
+<meta name="description" content="A settlement desk: the offer ladder with its CCP 998 clocks, a terms check of an agreement, a closing list that moves on evidence, a mediation statement. California state court. A kit for a Mac, shown here on a made-up matter.">
+<link rel="canonical" href="https://nanobotco.github.io/chirograph/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="NaNoBotCo">
+<meta property="og:title" content="Chirograph · ไคโรกราฟ">
+<meta property="og:description" content="A settlement desk: offers, clocks, terms, closing. · โต๊ะงานยอมความ">
+<meta property="og:url" content="https://nanobotco.github.io/chirograph/">
+<meta property="og:image" content="https://nanobotco.github.io/chirograph/card.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A sheet cut in two along a wavy line through the word Chirograph.">
+<meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="th_TH">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://nanobotco.github.io/chirograph/card.jpg">
+<link rel="alternate" type="text/plain" href="https://nanobotco.github.io/chirograph/llms.txt" title="llms.txt">
+<style>
+  :root { --ink:#111; --paper:#fffdf6; --line:#111; --gold:#f2b705; --soft:#f1ede0;
+          --plaintiff:#0b3d91; --defendant:#8a2c0d; --neutral:#1f5f3a; }
+  * { box-sizing: border-box; }
+  html { font-size: 20px; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+         font-family: "Atkinson Hyperlegible", "Sarabun", "Thonburi", system-ui, -apple-system, "Segoe UI", sans-serif; line-height:1.5; }
+  header, main { max-width: 62rem; margin: 0 auto; padding: 0 16px; }
+  header { display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between; padding-top:18px; }
+  h1 { font-size:1.6rem; margin:0; }
+  h2 { font-size:1.35rem; margin:1.6rem 0 .6rem; border-bottom:3px solid var(--line); padding-bottom:.2rem; }
+  h3 { font-size:1.05rem; margin:1rem 0 .3rem; }
+  .sub { margin:.2rem 0 0; }
+  button, select, input, textarea { font: inherit; color: var(--ink); }
+  button { background:var(--gold); color:#000; border:3px solid #000; border-radius:10px; padding:.55rem 1rem;
+           font-weight:700; cursor:pointer; min-height:48px; }
+  button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible, .bar:focus-visible { outline:4px solid #0b3d91; outline-offset:2px; }
+  select, input[type=text], textarea { width:100%; border:3px solid #000; border-radius:10px; padding:.5rem .6rem; background:#fff; }
+  textarea { min-height: 8rem; }
+  .row { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:.5rem 0; }
+  .row > * { flex: 1 1 14rem; }
+  .row > button { flex: 0 0 auto; }
+  .offer { margin:.7rem 0; }
+  .offer .who { font-weight:700; }
+  .track { background:var(--soft); border:2px solid #000; border-radius:10px; overflow:hidden; }
+  .bar { display:flex; align-items:center; min-height:52px; padding:0 .7rem; color:#fff; font-weight:700; font-size:1.1rem;
+         border:0; border-radius:0; width:auto; text-align:left; cursor:pointer; }
+  .bar.plaintiff { background:var(--plaintiff); } .bar.defendant { background:var(--defendant); } .bar.neutral { background:var(--neutral); }
+  .chip { display:inline-block; border:2px solid #000; border-radius:999px; padding:.05rem .6rem; font-weight:700; font-size:.85rem; margin:.15rem .25rem .15rem 0; background:#fff; }
+  .chip.on { background:#000; color:#fff; }
+  .chip.gold { background:var(--gold); color:#000; }
+  .chip.next { border-style:dashed; }
+  .detail { margin:.3rem 0 0; padding:.4rem .7rem; border-left:6px solid #000; background:#fff; }
+  .detail p { margin:.2rem 0; }
+  .box { border:3px solid #000; border-radius:12px; padding:.6rem .9rem; background:#fff; margin:.6rem 0; }
+  .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap:10px; }
+  .num { font-size:1.4rem; font-weight:700; }
+  .line { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size:.85rem; white-space:pre-wrap; word-break:break-word; }
+  .flag { font-weight:700; }
+  .flag::before { content:"▲ "; }
+  pre { white-space:pre-wrap; word-break:break-word; font-size:.8rem; background:#fff; border:3px solid #000; border-radius:12px; padding:.7rem; }
+  .found { font-weight:700; }
+  .notfound { }
+  .term { padding:.35rem 0; border-bottom:1px solid #999; }
+  .quote { margin:.15rem 0 0 1rem; font-size:.9rem; }
+  .legend span { margin-right:1rem; white-space:nowrap; }
+  .sw { display:inline-block; width:1rem; height:1rem; border:2px solid #000; vertical-align:-.15rem; margin-right:.3rem; }
+  footer { max-width:62rem; margin:2rem auto; padding:0 16px 2rem; font-size:.85rem; }
+  a.kitlink { display:inline-block; flex:0 0 auto; background:var(--gold); color:#000; border:3px solid #000; border-radius:10px;
+              padding:.55rem 1rem; font-weight:700; text-decoration:none; }
+  body.demo .kit { display:none; }
+  @media (max-width: 520px) { html { font-size:18px; } h1 { font-size:1.35rem; } }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1 id="title">Chirograph</h1>
+    <p class="sub" id="matterline"></p>
+  </div>
+  <div class="row" style="flex:0 0 auto">
+    <button id="lang" type="button" aria-label="Switch language">ไทย</button>
+    <button id="reload" class="kit" type="button" data-i="reload">Reload</button>
+  </div>
+</header>
+<main>
+  <section id="demobar" class="box" hidden>
+    <p data-i="demo1"></p>
+    <p data-i="demo2"></p>
+    <div class="row"><a class="kitlink" id="kit" data-i="getkit"></a></div>
+    <p data-i="demofiles"></p>
+    <ul id="samples"></ul>
+  </section>
+  <p id="empty" hidden data-i="nomatter">No matter folder is open. Start the desk with --matter and a folder.</p>
+
+  <section id="s-ladder" hidden>
+    <h2 data-i="ladder">Ladder</h2>
+    <p class="legend"><span><i class="sw" style="background:var(--plaintiff)"></i><b data-i="plaintiff">Plaintiff</b></span>
+       <span><i class="sw" style="background:var(--defendant)"></i><b data-i="defendant">Defendant</b></span>
+       <span><i class="sw" style="background:var(--neutral)"></i><b data-i="neutral">Neutral</b></span>
+       <span data-i="tapbar">Tap a bar for its terms.</span></p>
+    <div id="offers"></div>
+    <div class="grid" id="positions"></div>
+  </section>
+
+  <section id="s-clocks" hidden>
+    <h2 data-i="clocks">Clocks running</h2>
+    <div id="clocks"></div>
+  </section>
+
+  <section id="s-closing" hidden>
+    <h2 data-i="closing">Closing list</h2>
+    <div id="closing"></div>
+  </section>
+
+  <section id="s-terms" hidden>
+    <h2 data-i="terms">Terms check</h2>
+    <div class="row">
+      <select id="file" aria-label="Agreement file"></select>
+      <button id="checkfile" type="button" data-i="readfile">Read file</button>
+    </div>
+    <div class="row kit">
+      <textarea id="paste" data-ph="pastehere" placeholder="Or paste the agreement text here"></textarea>
+    </div>
+    <div class="row kit">
+      <input type="text" id="only" data-ph="only" placeholder="Release runs to one name only (optional)">
+      <button id="checkpaste" type="button" data-i="readpaste">Read pasted text</button>
+    </div>
+    <div id="termsout" aria-live="polite"></div>
+  </section>
+
+  <section id="s-brief" hidden>
+    <h2 data-i="brief">Brief</h2>
+    <p data-i="english">Dates and their arithmetic print in English, in the words of the rules.</p>
+    <pre id="brief"></pre>
+  </section>
+</main>
+<footer><span data-i="foot">This window reads the matter folder on this computer and shows it. It gives dates and document text.</span></footer>
+
+<script>
+(function () {
+  var TOKEN = "";
+  var DEMO = {"kit": "https://github.com/NaNoBotCo/chirograph", "state": {"matter": {"name": "Jane Doe v. Roe Holdings", "case_number": "26CV000000", "court": "Superior Court of California, County of Alameda", "court_tz": "America/Los_Angeles", "reader_tz": "Europe/London"}, "today": "2026-09-21", "today_text": "Mon Sep 21 2026", "offers": [{"id": "O1", "made": "2026-08-03", "from": "Jane Doe", "to": "Roe Holdings, LLC", "side": "plaintiff", "kind": "letter", "amount": 240000, "terms": "Paid within 30 days; release of Roe Holdings, LLC only.", "method": "email", "document": "offers/2026-08-03 demand letter.txt", "expires": "2026-08-17", "expires_time": "17:00", "extend_for_service": false, "answers": "", "status": "open", "decided_on": "", "decision_document": "", "note": "", "status_now": "LAPSED", "flags": [], "running": false, "amount_text": "$240,000", "kind_text": "letter", "clock": {"date": "2026-08-17", "time": "17:00", "line": "Lapses Mon Aug 17 2026 at 17:00 court time — expiry stated in the offer (offers/2026-08-03 demand letter.txt).", "notes": [], "both": "Mon Aug 17 2026 17:00 court time = Tue Aug 18 2026 01:00 in Europe/London.", "source": "stated"}, "made_text": "Mon Aug 3 2026"}, {"id": "O2", "made": "2026-08-12", "from": "Roe Holdings, LLC", "to": "Jane Doe", "side": "defendant", "kind": "998", "amount": 60000, "terms": "Judgment for the sum; each side bears its own costs.", "method": "email", "document": "offers/2026-08-12 offer to compromise.txt", "expires": "", "expires_time": "", "extend_for_service": false, "answers": "", "status": "open", "decided_on": "", "decision_document": "", "note": "", "status_now": "LAPSED", "flags": [], "running": false, "amount_text": "$60,000", "kind_text": "statutory offer (CCP §998)", "clock": {"date": "2026-09-11", "time": "", "line": "Lapses Fri Sep 11 2026 — made Aug 12 + 30 days (CCP §998(b)(2)) = Fri Sep 11.", "notes": ["Served by email. This date does not add the 2 court days in CCP §1010.6(a)(3)(B); whether that extension reaches the 30 days is a case-law question the rule table leaves open (from memory, not read). `--extend` applies it."], "both": "End of Fri Sep 11 2026 court time (23:59) = Sat Sep 12 2026 07:59 in Europe/London.", "source": "statute"}, "made_text": "Wed Aug 12 2026"}, {"id": "O3", "made": "2026-08-26", "from": "Jane Doe", "to": "Roe Holdings, LLC", "side": "plaintiff", "kind": "counter", "amount": 185000, "terms": "Paid within 30 days; mutual releases.", "method": "email", "document": "offers/2026-08-26 counter letter.txt", "expires": "", "expires_time": "", "extend_for_service": false, "answers": "O2", "status": "rejected", "decided_on": "2026-09-02", "decision_document": "offers/2026-09-02 reply.txt", "note": "", "status_now": "REJECTED", "flags": [], "running": false, "amount_text": "$185,000", "kind_text": "counter", "clock": null, "made_text": "Wed Aug 26 2026"}, {"id": "O4", "made": "2026-09-09", "from": "Pat Example (mediator)", "to": "both sides", "side": "neutral", "kind": "mediator", "amount": 120000, "terms": "Paid within 21 days; mutual releases; quitclaim deed; dismissal of both pleadings with prejudice.", "method": "email", "document": "offers/2026-09-09 mediator's proposal.txt", "expires": "2026-09-16", "expires_time": "12:00", "extend_for_service": false, "answers": "", "status": "accepted", "decided_on": "2026-09-15", "decision_document": "offers/2026-09-15 acceptance.txt", "note": "", "status_now": "ACCEPTED", "flags": [], "running": false, "amount_text": "$120,000", "kind_text": "mediator's proposal", "clock": {"date": "2026-09-16", "time": "12:00", "line": "Lapses Wed Sep 16 2026 at 12:00 court time — expiry stated in the offer (offers/2026-09-09 mediator's proposal.txt).", "notes": [], "both": "Wed Sep 16 2026 12:00 court time = Wed Sep 16 2026 20:00 in Europe/London.", "source": "stated"}, "made_text": "Wed Sep 9 2026"}], "max_amount": 240000.0, "positions": {"plaintiff": {"id": "O3", "from": "Jane Doe", "amount": 185000, "amount_text": "$185,000", "status": "REJECTED", "made": "2026-08-26"}, "defendant": {"id": "O2", "from": "Roe Holdings, LLC", "amount": 60000, "amount_text": "$60,000", "status": "LAPSED", "made": "2026-08-12"}, "gap": 125000.0, "gap_text": "$125,000", "midpoint": 122500.0, "midpoint_text": "$122,500", "accepted": {"id": "O4", "from": "Pat Example (mediator)", "amount": 120000, "amount_text": "$120,000", "status": "ACCEPTED", "made": "2026-09-09"}}, "closing": [{"id": "notice", "kind": "notice", "title": "Notice of settlement of the entire case", "date": "2026-09-17", "time": "", "line": "Due Thu Sep 17 2026 — settled Sep 17; written notice is filed and served immediately (Cal. Rules of Court, rule 3.1385(a)(1)).", "notes": ["Case management conference on Thu Sep 24 2026 falls within 10 days of settlement: the rule also calls for oral notice at once (Cal. Rules of Court, rule 3.1385(a)(1))."], "rule": "ca.notice_of_settlement", "chain": ["BUILT", "SIGNED", "SERVED", "FILED", "DONE"], "states": {"BUILT": {"evidence": "evidence/2026-09-17 notice of settlement - built.txt", "on": "2026-09-17"}, "SIGNED": {"evidence": "evidence/2026-09-17 notice of settlement - signed.txt", "on": "2026-09-17"}, "SERVED": {"evidence": "evidence/2026-09-18 notice of settlement - sent mail.txt", "on": "2026-09-18"}}, "state_now": "SERVED", "next_state": "FILED", "flags": [], "both": "End of Thu Sep 17 2026 court time (23:59) = Fri Sep 18 2026 07:59 in Europe/London.", "finished": false, "date_text": "Thu Sep 17 2026", "days": -4}, {"id": "payment", "kind": "payment", "title": "Payment of $120,000 by Roe Holdings, LLC (wire)", "date": "2026-10-08", "time": "", "line": "Due Thu Oct 8 2026 — signed Sep 17 + 21 days (Agreement §1) = Thu Oct 8.", "notes": [], "rule": "", "chain": ["DONE"], "states": {}, "state_now": "not started", "next_state": "DONE", "flags": [], "both": "End of Thu Oct 8 2026 court time (23:59) = Fri Oct 9 2026 07:59 in Europe/London.", "finished": false, "date_text": "Thu Oct 8 2026", "days": 17}, {"id": "wire", "kind": "wire", "title": "Wire instructions to the paying side", "date": "2026-09-24", "time": "", "line": "Due Thu Sep 24 2026 — signed Sep 17 + 7 days (Agreement §1) = Thu Sep 24.", "notes": [], "rule": "", "chain": ["BUILT", "SERVED", "DONE"], "states": {"BUILT": {"evidence": "evidence/2026-09-21 wire instructions - sent mail.txt", "on": "2026-09-21"}, "SERVED": {"evidence": "evidence/2026-09-21 wire instructions - sent mail.txt", "on": "2026-09-21"}}, "state_now": "SERVED", "next_state": "DONE", "flags": [], "both": "End of Thu Sep 24 2026 court time (23:59) = Fri Sep 25 2026 07:59 in Europe/London.", "finished": false, "date_text": "Thu Sep 24 2026", "days": 3}, {"id": "tax", "kind": "tax", "title": "IRS Form W-9 to the paying side", "date": "2026-09-24", "time": "", "line": "Due Thu Sep 24 2026 — signed Sep 17 + 7 days (Agreement §1) = Thu Sep 24.", "notes": [], "rule": "", "chain": ["BUILT", "SIGNED", "SERVED", "DONE"], "states": {}, "state_now": "not started", "next_state": "BUILT", "flags": [], "both": "End of Thu Sep 24 2026 court time (23:59) = Fri Sep 25 2026 07:59 in Europe/London.", "finished": false, "date_text": "Thu Sep 24 2026", "days": 3}, {"id": "instrument-sign", "kind": "instrument", "title": "Quitclaim deed signed before a notary or, for a signer abroad, a consular officer", "date": "2026-10-01", "time": "", "line": "Due Thu Oct 1 2026 — signed Sep 17 + 14 days (Agreement §6) = Thu Oct 1.", "notes": [], "rule": "", "chain": ["BUILT", "SIGNED"], "states": {}, "state_now": "not started", "next_state": "BUILT", "flags": [], "both": "End of Thu Oct 1 2026 court time (23:59) = Fri Oct 2 2026 07:59 in Europe/London.", "finished": false, "date_text": "Thu Oct 1 2026", "days": 10}, {"id": "instrument-dispatch", "kind": "instrument", "title": "Quitclaim deed dispatched by tracked courier", "date": "2026-10-01", "time": "", "line": "Due Thu Oct 1 2026 — signed Sep 17 + 14 days (Agreement §6) = Thu Oct 1.", "notes": [], "rule": "", "chain": ["SERVED", "DONE"], "states": {}, "state_now": "not started", "next_state": "SERVED", "flags": [], "both": "End of Thu Oct 1 2026 court time (23:59) = Fri Oct 2 2026 07:59 in Europe/London.", "finished": false, "date_text": "Thu Oct 1 2026", "days": 10}, {"id": "instrument-outside", "kind": "instrument", "title": "Quitclaim deed: outside date for delivery", "date": "2026-10-15", "time": "", "line": "Outside date Thu Oct 15 2026 — signed Sep 17 + 28 days (Agreement §6) = Thu Oct 15.", "notes": [], "rule": "", "chain": ["DONE"], "states": {}, "state_now": "not started", "next_state": "DONE", "flags": [], "both": "End of Thu Oct 15 2026 court time (23:59) = Fri Oct 16 2026 07:59 in Europe/London.", "finished": false, "date_text": "Thu Oct 15 2026", "days": 24}, {"id": "lis-pendens", "kind": "lis_pendens", "title": "Withdrawal of the lis pendens (the recorded notice of the pending case), recorded", "date": "2026-10-18", "time": "", "line": "Due Sun Oct 18 2026 — payment due Oct 8 + 10 days (Agreement §7) = Sun Oct 18.", "notes": ["Sun Oct 18 2026 is a Sunday; this date does not roll. The next court day is Mon Oct 19 2026.", "The agreement's own counting clause decides whether this date moves."], "rule": "", "chain": ["BUILT", "SIGNED", "FILED", "DONE"], "states": {}, "state_now": "not started", "next_state": "BUILT", "flags": [], "both": "End of Sun Oct 18 2026 court time (23:59) = Mon Oct 19 2026 07:59 in Europe/London.", "finished": false, "date_text": "Sun Oct 18 2026", "days": 27}, {"id": "dismissal", "kind": "dismissal", "title": "Request for dismissal of the entire case", "date": "2026-11-02", "time": "", "line": "Due Mon Nov 2 2026 — settled Sep 17 + 45 days (Cal. Rules of Court, rule 3.1385(b)) = Sun Nov 1; Sun Nov 1 is a Sunday; rolls to Mon Nov 2 (Cal. Rules of Court, rule 1.10(b)).", "notes": ["If the case cannot be dismissed in time, a notice and declaration asking for more time: Last day Mon Oct 26 2026 — last day to request dismissal Mon Nov 2 − 5 court days (Cal. Rules of Court, rule 3.1385(e)) = Mon Oct 26."], "rule": "ca.dismissal", "chain": ["BUILT", "SIGNED", "SERVED", "FILED", "DONE"], "states": {}, "state_now": "not started", "next_state": "BUILT", "flags": [], "both": "End of Mon Nov 2 2026 court time (23:59) = Tue Nov 3 2026 07:59 in Europe/London.", "finished": false, "date_text": "Mon Nov 2 2026", "days": 42}, {"id": "retain", "kind": "retain", "title": "Stipulation for the court to retain jurisdiction to enforce the settlement", "date": "2026-11-02", "time": "", "line": "Due Mon Nov 2 2026 — on file before or with the request for dismissal; the court may dismiss without prejudice and retain jurisdiction when the parties stipulate in writing or orally before the court (CCP §664.6(a)).", "notes": [], "rule": "ca.retain_jurisdiction", "chain": ["BUILT", "SIGNED", "FILED", "DONE"], "states": {}, "state_now": "not started", "next_state": "BUILT", "flags": [], "both": "End of Mon Nov 2 2026 court time (23:59) = Tue Nov 3 2026 07:59 in Europe/London.", "finished": false, "date_text": "Mon Nov 2 2026", "days": 42}, {"id": "hearing-1", "kind": "hearing", "title": "Case management conference", "date": "2026-09-24", "time": "09:00", "line": "Thu Sep 24 2026 09:00 court time — set by received/2026-08-20 notice of case management conference.txt. Stays ON CALENDAR until an order or the court's page, saved to disk, shows it is off.", "notes": [], "rule": "", "chain": ["OFF CALENDAR"], "states": {}, "order": "received/2026-08-20 notice of case management conference.txt", "hearing_kind": "hearing", "state_now": "ON CALENDAR", "next_state": "OFF CALENDAR", "flags": [], "both": "Thu Sep 24 2026 09:00 court time = Thu Sep 24 2026 17:00 in Europe/London.", "finished": false, "date_text": "Thu Sep 24 2026", "days": 3}], "agreements": ["agreements/2026-09-17 settlement agreement.pdf", "agreements/2026-09-17 settlement agreement.txt"], "brief": "BRIEF — Jane Doe v. Roe Holdings\nCourt date Mon Sep 21 2026 (America/Los_Angeles); reader zone Europe/London\n\nPast its date, not finished\n  Thu Sep 17 2026 — Notice of settlement of the entire case [SERVED]\n      Due Thu Sep 17 2026 — settled Sep 17; written notice is filed and served immediately (Cal. Rules of Court, rule 3.1385(a)(1)).\n      End of Thu Sep 17 2026 court time (23:59) = Fri Sep 18 2026 07:59 in Europe/London.\n\nToday\n  Nothing dated today.\n\nNext 7 days\n  Thu Sep 24 2026 09:00 — Case management conference [ON CALENDAR]\n      Thu Sep 24 2026 09:00 court time — set by received/2026-08-20 notice of case management conference.txt. Stays ON CALENDAR until an order or the court's page, saved to disk, shows it is off.\n      Thu Sep 24 2026 09:00 court time = Thu Sep 24 2026 17:00 in Europe/London.\n  Thu Sep 24 2026 — Wire instructions to the paying side [SERVED]\n      Due Thu Sep 24 2026 — signed Sep 17 + 7 days (Agreement §1) = Thu Sep 24.\n      End of Thu Sep 24 2026 court time (23:59) = Fri Sep 25 2026 07:59 in Europe/London.\n  Thu Sep 24 2026 — IRS Form W-9 to the paying side [not started]\n      Due Thu Sep 24 2026 — signed Sep 17 + 7 days (Agreement §1) = Thu Sep 24.\n      End of Thu Sep 24 2026 court time (23:59) = Fri Sep 25 2026 07:59 in Europe/London.\n\nClocks running\n  None.\n\nTasks with no evidence on this disk\n  Notice of settlement of the entire case [SERVED] — next: FILED, due Thu Sep 17 2026\n  Payment of $120,000 by Roe Holdings, LLC (wire) [not started] — next: DONE, due Thu Oct 8 2026\n  Wire instructions to the paying side [SERVED] — next: DONE, due Thu Sep 24 2026\n  IRS Form W-9 to the paying side [not started] — next: BUILT, due Thu Sep 24 2026\n  Quitclaim deed signed before a notary or, for a signer abroad, a consular officer [not started] — next: BUILT, due Thu Oct 1 2026\n  Quitclaim deed dispatched by tracked courier [not started] — next: SERVED, due Thu Oct 1 2026\n  Quitclaim deed: outside date for delivery [not started] — next: DONE, due Thu Oct 15 2026\n  Withdrawal of the lis pendens (the recorded notice of the pending case), recorded [not started] — next: BUILT, due Sun Oct 18 2026\n  Request for dismissal of the entire case [not started] — next: BUILT, due Mon Nov 2 2026\n  Stipulation for the court to retain jurisdiction to enforce the settlement [not started] — next: BUILT, due Mon Nov 2 2026\n\nHearings still ON CALENDAR\n  Case management conference — Thu Sep 24 2026 09:00\n      Thu Sep 24 2026 09:00 court time = Thu Sep 24 2026 17:00 in Europe/London.\n\nOffers open\n  None.\n"}, "terms": {"agreements/2026-09-17 settlement agreement.pdf": {"file": "2026-09-17 settlement agreement.pdf", "pages": 2, "chars": 2785, "groups": ["Payment", "Release", "Dismissal", "Property", "Tax", "Conduct after signing", "Enforcement", "Form of the agreement"], "terms": [{"id": "payment_amount", "group": "Payment", "label": "Payment amount", "th": "จำนวนเงินที่จ่าย", "found": true, "hits": [{"page": 1, "line": 11, "cite": "p. 1:11", "quote": "1. Settlement Payment. Roe Holdings shall pay Doe the sum of $120,000 (the \"Settlement Payment\") by wire transfer within twenty-one (21) calendar days after the Effective Date. Within seven (7) days after the Effective Date, Doe shall send …"}]}, {"id": "payment_payor", "group": "Payment", "label": "Who pays", "th": "ใครเป็นผู้จ่าย", "found": true, "hits": [{"page": 1, "line": 11, "cite": "p. 1:11", "quote": "1. Settlement Payment. Roe Holdings shall pay Doe the sum of $120,000 (the \"Settlement Payment\") by wire transfer within twenty-one (21) calendar days after the Effective Date. Within seven (7) days after the Effective Date, Doe shall send …"}]}, {"id": "payment_due", "group": "Payment", "label": "Payment due date", "th": "วันครบกำหนดจ่าย", "found": true, "hits": [{"page": 1, "line": 11, "cite": "p. 1:11", "quote": "1. Settlement Payment. Roe Holdings shall pay Doe the sum of $120,000 (the \"Settlement Payment\") by wire transfer within twenty-one (21) calendar days after the Effective Date. Within seven (7) days after the Effective Date, Doe shall send …"}, {"page": 1, "line": 12, "cite": "p. 1:12", "quote": "Payment\") by wire transfer within twenty-one (21) calendar days after the Effective Date. Within seven (7) days after the Effective Date, Doe shall send wire instructions and a completed IRS Form W-9 to counsel for Roe Holdings. 2. Release …"}]}, {"id": "payment_method", "group": "Payment", "label": "Payment method", "th": "วิธีจ่ายเงิน", "found": true, "hits": [{"page": 1, "line": 12, "cite": "p. 1:12", "quote": "Payment\") by wire transfer within twenty-one (21) calendar days after the Effective Date. Within seven (7) days after the Effective Date, Doe shall send wire instructions and a completed IRS Form W-9 to counsel for Roe Holdings. 2. Release …"}, {"page": 1, "line": 13, "cite": "p. 1:13", "quote": "Within seven (7) days after the Effective Date, Doe shall send wire instructions and a completed IRS Form W-9 to counsel for Roe Holdings. 2. Release by Doe. Upon receipt of the Settlement Payment, Doe releases and forever discharges Roe …"}]}, {"id": "release", "group": "Release", "label": "Release of claims", "th": "การสละสิทธิเรียกร้อง", "found": true, "hits": [{"page": 1, "line": 15, "cite": "p. 1:15", "quote": "2. Release by Doe. Upon receipt of the Settlement Payment, Doe releases and forever discharges Roe Holdings and Mr. Roe, and their respective officers, members, agents and insurers, from all claims, demands and causes of action arising out …"}, {"page": 1, "line": 16, "cite": "p. 1:16", "quote": "discharges Roe Holdings and Mr. Roe, and their respective officers, members, agents and insurers, from all claims, demands and causes of action arising out of the Action. 3. Release by Roe Holdings. Roe Holdings releases and forever …"}, {"page": 1, "line": 18, "cite": "p. 1:18", "quote": "3. Release by Roe Holdings. Roe Holdings releases and forever discharges Doe, and her heirs and assigns, from all claims, demands and causes of action arising out of the Action. 4. Unknown Claims. Each Party waives the protection of …"}]}, {"id": "release_mutual", "group": "Release", "label": "Mutual release", "th": "สละสิทธิทั้งสองฝ่าย", "found": false, "hits": []}, {"id": "waiver_1542", "group": "Release", "label": "Waiver of Civil Code §1542 (unknown claims)", "th": "การสละสิทธิตามประมวลกฎหมายแพ่ง มาตรา 1542 (ข้อเรียกร้องที่ยังไม่รู้)", "found": true, "hits": [{"page": 1, "line": 20, "cite": "p. 1:20", "quote": "4. Unknown Claims. Each Party waives the protection of California Civil Code section 1542. 5. Dismissal. Within five (5) court days after receipt of the Settlement Payment, Doe shall file a request for dismissal of the complaint with …"}]}, {"id": "no_admission", "group": "Release", "label": "No admission of liability", "th": "ไม่ถือเป็นการยอมรับผิด", "found": false, "hits": []}, {"id": "dismissal", "group": "Dismissal", "label": "Dismissal of the case", "th": "การถอนฟ้อง", "found": true, "hits": [{"page": 1, "line": 21, "cite": "p. 1:21", "quote": "5. Dismissal. Within five (5) court days after receipt of the Settlement Payment, Doe shall file a request for dismissal of the complaint with prejudice, and Roe Holdings shall file a request for dismissal of the cross-complaint with …"}, {"page": 1, "line": 22, "cite": "p. 1:22", "quote": "file a request for dismissal of the complaint with prejudice, and Roe Holdings shall file a request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign …"}, {"page": 1, "line": 23, "cite": "p. 1:23", "quote": "request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign a quitclaim deed for the parcel described in Exhibit A before a notary public or, if she is …"}]}, {"id": "dismissal_with_prejudice", "group": "Dismissal", "label": "Dismissal with prejudice", "th": "ถอนฟ้องแบบฟ้องใหม่ไม่ได้ (with prejudice)", "found": true, "hits": [{"page": 1, "line": 22, "cite": "p. 1:22", "quote": "file a request for dismissal of the complaint with prejudice, and Roe Holdings shall file a request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign …"}, {"page": 1, "line": 23, "cite": "p. 1:23", "quote": "request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign a quitclaim deed for the parcel described in Exhibit A before a notary public or, if she is …"}]}, {"id": "dismissal_without_prejudice", "group": "Dismissal", "label": "Dismissal without prejudice", "th": "ถอนฟ้องแบบฟ้องใหม่ได้ (without prejudice)", "found": false, "hits": []}, {"id": "dismissal_complaint", "group": "Dismissal", "label": "Dismissal names the complaint", "th": "ระบุคำฟ้อง", "found": true, "hits": [{"page": 1, "line": 22, "cite": "p. 1:22", "quote": "file a request for dismissal of the complaint with prejudice, and Roe Holdings shall file a request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign …"}]}, {"id": "dismissal_cross_complaint", "group": "Dismissal", "label": "Dismissal names the cross-complaint", "th": "ระบุคำฟ้องแย้ง", "found": true, "hits": [{"page": 1, "line": 22, "cite": "p. 1:22", "quote": "file a request for dismissal of the complaint with prejudice, and Roe Holdings shall file a request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign …"}, {"page": 1, "line": 23, "cite": "p. 1:23", "quote": "request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign a quitclaim deed for the parcel described in Exhibit A before a notary public or, if she is …"}]}, {"id": "request_for_dismissal", "group": "Dismissal", "label": "Request for dismissal: who files, and when", "th": "คำร้องขอถอนฟ้อง: ใครยื่น และเมื่อไร", "found": true, "hits": [{"page": 1, "line": 22, "cite": "p. 1:22", "quote": "file a request for dismissal of the complaint with prejudice, and Roe Holdings shall file a request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign …"}, {"page": 1, "line": 23, "cite": "p. 1:23", "quote": "request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign a quitclaim deed for the parcel described in Exhibit A before a notary public or, if she is …"}]}, {"id": "lis_pendens", "group": "Dismissal", "label": "Withdrawal of the lis pendens (recorded notice of the pending case)", "th": "การถอนประกาศคดีที่จดไว้กับที่ดิน (lis pendens)", "found": true, "hits": [{"page": 1, "line": 10, "cite": "p. 1:10", "quote": "B. Doe recorded a lis pendens against the parcel described in Exhibit A. 1. Settlement Payment. Roe Holdings shall pay Doe the sum of $120,000 (the \"Settlement Payment\") by wire transfer within twenty-one (21) calendar days after the …"}, {"page": 1, "line": 29, "cite": "p. 1:29", "quote": "7. Lis Pendens. Within ten (10) days after receipt of the Settlement Payment, Doe shall record a withdrawal of the lis pendens with the county recorder. 8. Enforcement. The Parties stipulate that the Court shall retain jurisdiction under …"}, {"page": 1, "line": 30, "cite": "p. 1:30", "quote": "record a withdrawal of the lis pendens with the county recorder. 8. Enforcement. The Parties stipulate that the Court shall retain jurisdiction under Code of Civil Procedure section 664.6 to enforce this Agreement. Each Party shall bear …"}]}, {"id": "property_instrument", "group": "Property", "label": "Transfer instrument (deed, assignment, bill of sale)", "th": "เอกสารโอนทรัพย์สิน (โฉนดโอน หนังสือโอนสิทธิ)", "found": true, "hits": [{"page": 1, "line": 24, "cite": "p. 1:24", "quote": "6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign a quitclaim deed for the parcel described in Exhibit A before a notary public or, if she is outside the United States, a consular officer, and shall send …"}, {"page": 1, "line": 25, "cite": "p. 1:25", "quote": "quitclaim deed for the parcel described in Exhibit A before a notary public or, if she is outside the United States, a consular officer, and shall send the signed deed to counsel for Roe Holdings by tracked courier. The outside date for …"}, {"page": 1, "line": 26, "cite": "p. 1:26", "quote": "outside the United States, a consular officer, and shall send the signed deed to counsel for Roe Holdings by tracked courier. The outside date for delivery of the deed is twenty-eight (28) days after the Effective Date. 7. Lis Pendens. …"}, {"page": 1, "line": 27, "cite": "p. 1:27", "quote": "for Roe Holdings by tracked courier. The outside date for delivery of the deed is twenty-eight (28) days after the Effective Date. 7. Lis Pendens. Within ten (10) days after receipt of the Settlement Payment, Doe shall record a withdrawal …"}]}, {"id": "notarisation", "group": "Property", "label": "Notarisation, and how a signer abroad signs", "th": "การรับรองลายมือชื่อ และวิธีเซ็นเมื่อผู้เซ็นอยู่ต่างประเทศ", "found": true, "hits": [{"page": 1, "line": 25, "cite": "p. 1:25", "quote": "quitclaim deed for the parcel described in Exhibit A before a notary public or, if she is outside the United States, a consular officer, and shall send the signed deed to counsel for Roe Holdings by tracked courier. The outside date for …"}, {"page": 1, "line": 26, "cite": "p. 1:26", "quote": "outside the United States, a consular officer, and shall send the signed deed to counsel for Roe Holdings by tracked courier. The outside date for delivery of the deed is twenty-eight (28) days after the Effective Date. 7. Lis Pendens. …"}]}, {"id": "recording", "group": "Property", "label": "Recording", "th": "การจดทะเบียนเอกสาร", "found": true, "hits": [{"page": 1, "line": 30, "cite": "p. 1:30", "quote": "record a withdrawal of the lis pendens with the county recorder. 8. Enforcement. The Parties stipulate that the Court shall retain jurisdiction under Code of Civil Procedure section 664.6 to enforce this Agreement. Each Party shall bear …"}]}, {"id": "tax_allocation", "group": "Tax", "label": "Tax allocation and tax advice", "th": "การจัดสรรภาษี และคำแนะนำด้านภาษี", "found": true, "hits": [{"page": 2, "line": 2, "cite": "p. 2:2", "quote": "9. Taxes. No Party makes a representation about the tax treatment of the Settlement Payment. 10. General. This Agreement is the entire agreement of the Parties. It is governed by the laws of the State of California. It may be signed in …"}]}, {"id": "tax_forms", "group": "Tax", "label": "Tax reporting forms", "th": "แบบฟอร์มรายงานภาษี", "found": true, "hits": [{"page": 1, "line": 14, "cite": "p. 1:14", "quote": "completed IRS Form W-9 to counsel for Roe Holdings. 2. Release by Doe. Upon receipt of the Settlement Payment, Doe releases and forever discharges Roe Holdings and Mr. Roe, and their respective officers, members, agents and insurers, from …"}]}, {"id": "confidentiality", "group": "Conduct after signing", "label": "Confidentiality", "th": "การรักษาความลับ", "found": false, "hits": []}, {"id": "non_disparagement", "group": "Conduct after signing", "label": "Non-disparagement", "th": "ข้อห้ามกล่าวให้ร้าย", "found": false, "hits": []}, {"id": "retained_jurisdiction", "group": "Enforcement", "label": "Court retains jurisdiction (CCP §664.6)", "th": "ศาลคงอำนาจบังคับตามข้อตกลง (CCP §664.6)", "found": true, "hits": [{"page": 1, "line": 31, "cite": "p. 1:31", "quote": "8. Enforcement. The Parties stipulate that the Court shall retain jurisdiction under Code of Civil Procedure section 664.6 to enforce this Agreement. Each Party shall bear its own"}, {"page": 1, "line": 32, "cite": "p. 1:32", "quote": "Civil Procedure section 664.6 to enforce this Agreement. Each Party shall bear its own"}]}, {"id": "fees_costs", "group": "Enforcement", "label": "Fees and costs", "th": "ค่าทนายและค่าใช้จ่าย", "found": true, "hits": [{"page": 2, "line": 1, "cite": "p. 2:1", "quote": "attorneys' fees and costs. 9. Taxes. No Party makes a representation about the tax treatment of the Settlement Payment. 10. General. This Agreement is the entire agreement of the Parties. It is governed by the laws of the State of …"}]}, {"id": "liens", "group": "Enforcement", "label": "Liens", "th": "สิทธิยึดหน่วงหรือภาระติดพัน", "found": false, "hits": []}, {"id": "cure", "group": "Enforcement", "label": "Cure period after a default", "th": "ระยะเวลาแก้ไขเมื่อผิดนัด", "found": false, "hits": []}, {"id": "time_essence", "group": "Enforcement", "label": "Time is of the essence", "th": "กำหนดเวลาเป็นสาระสำคัญ", "found": true, "hits": [{"page": 2, "line": 5, "cite": "p. 2:5", "quote": "signature. Time is of the essence."}]}, {"id": "counterparts", "group": "Form of the agreement", "label": "Counterparts", "th": "ลงนามแยกฉบับได้", "found": true, "hits": [{"page": 2, "line": 4, "cite": "p. 2:4", "quote": "laws of the State of California. It may be signed in counterparts and by electronic signature. Time is of the essence."}]}, {"id": "e_signature", "group": "Form of the agreement", "label": "Electronic signature", "th": "ลายมือชื่ออิเล็กทรอนิกส์", "found": true, "hits": [{"page": 2, "line": 4, "cite": "p. 2:4", "quote": "laws of the State of California. It may be signed in counterparts and by electronic signature. Time is of the essence."}]}, {"id": "integration", "group": "Form of the agreement", "label": "Integration (the whole agreement is in this document)", "th": "ข้อตกลงทั้งหมดอยู่ในเอกสารนี้", "found": true, "hits": [{"page": 2, "line": 3, "cite": "p. 2:3", "quote": "10. General. This Agreement is the entire agreement of the Parties. It is governed by the laws of the State of California. It may be signed in counterparts and by electronic signature. Time is of the essence."}]}, {"id": "governing_law", "group": "Form of the agreement", "label": "Governing law", "th": "กฎหมายที่ใช้บังคับ", "found": true, "hits": [{"page": 2, "line": 3, "cite": "p. 2:3", "quote": "10. General. This Agreement is the entire agreement of the Parties. It is governed by the laws of the State of California. It may be signed in counterparts and by electronic signature. Time is of the essence."}, {"page": 2, "line": 4, "cite": "p. 2:4", "quote": "laws of the State of California. It may be signed in counterparts and by electronic signature. Time is of the essence."}]}], "release": {"clauses": [{"page": 1, "line": 15, "cite": "p. 1:15", "quote": "2. Release by Doe. Upon receipt of the Settlement Payment, Doe releases and forever discharges Roe Holdings and Mr. Roe, and their respective officers, members, agents and insurers, from all claims, demands and causes of action arising out of the Action.", "releasing": ["Jane Doe"], "released": ["Roe Holdings, LLC", "Richard Roe"], "classes": ["agents", "insurers", "officers", "members"], "each_other": false}, {"page": 1, "line": 18, "cite": "p. 1:18", "quote": "3. Release by Roe Holdings. Roe Holdings releases and forever discharges Doe, and her heirs and assigns, from all claims, demands and causes of action arising out of the Action.", "releasing": ["Roe Holdings, LLC"], "released": ["Jane Doe"], "classes": ["heirs", "assigns"], "each_other": false}], "released": ["Roe Holdings, LLC", "Richard Roe", "Jane Doe"], "releasing": ["Jane Doe", "Roe Holdings, LLC"], "classes": ["agents", "insurers", "officers", "members", "heirs", "assigns"], "mutual": null, "defined": [{"name": "Jane Doe", "aliases": ["Doe"]}, {"name": "Roe Holdings, LLC", "aliases": ["Roe Holdings"]}, {"name": "Richard Roe", "aliases": ["Mr. Roe"]}]}, "problems": []}, "agreements/2026-09-17 settlement agreement.txt": {"file": "2026-09-17 settlement agreement.txt", "pages": 1, "chars": 2785, "groups": ["Payment", "Release", "Dismissal", "Property", "Tax", "Conduct after signing", "Enforcement", "Form of the agreement"], "terms": [{"id": "payment_amount", "group": "Payment", "label": "Payment amount", "th": "จำนวนเงินที่จ่าย", "found": true, "hits": [{"page": 1, "line": 16, "cite": "p. 1:16", "quote": "1. Settlement Payment. Roe Holdings shall pay Doe the sum of $120,000 (the \"Settlement Payment\") by wire transfer within twenty-one (21) calendar days after the Effective Date. Within seven (7) days after the Effective Date, Doe shall send …"}]}, {"id": "payment_payor", "group": "Payment", "label": "Who pays", "th": "ใครเป็นผู้จ่าย", "found": true, "hits": [{"page": 1, "line": 16, "cite": "p. 1:16", "quote": "1. Settlement Payment. Roe Holdings shall pay Doe the sum of $120,000 (the \"Settlement Payment\") by wire transfer within twenty-one (21) calendar days after the Effective Date. Within seven (7) days after the Effective Date, Doe shall send …"}]}, {"id": "payment_due", "group": "Payment", "label": "Payment due date", "th": "วันครบกำหนดจ่าย", "found": true, "hits": [{"page": 1, "line": 16, "cite": "p. 1:16", "quote": "1. Settlement Payment. Roe Holdings shall pay Doe the sum of $120,000 (the \"Settlement Payment\") by wire transfer within twenty-one (21) calendar days after the Effective Date. Within seven (7) days after the Effective Date, Doe shall send …"}, {"page": 1, "line": 17, "cite": "p. 1:17", "quote": "Payment\") by wire transfer within twenty-one (21) calendar days after the Effective Date. Within seven (7) days after the Effective Date, Doe shall send wire instructions and a completed IRS Form W-9 to counsel for Roe Holdings."}]}, {"id": "payment_method", "group": "Payment", "label": "Payment method", "th": "วิธีจ่ายเงิน", "found": true, "hits": [{"page": 1, "line": 17, "cite": "p. 1:17", "quote": "Payment\") by wire transfer within twenty-one (21) calendar days after the Effective Date. Within seven (7) days after the Effective Date, Doe shall send wire instructions and a completed IRS Form W-9 to counsel for Roe Holdings."}, {"page": 1, "line": 18, "cite": "p. 1:18", "quote": "Within seven (7) days after the Effective Date, Doe shall send wire instructions and a completed IRS Form W-9 to counsel for Roe Holdings. 2. Release by Doe. Upon receipt of the Settlement Payment, Doe releases and forever"}]}, {"id": "release", "group": "Release", "label": "Release of claims", "th": "การสละสิทธิเรียกร้อง", "found": true, "hits": [{"page": 1, "line": 21, "cite": "p. 1:21", "quote": "2. Release by Doe. Upon receipt of the Settlement Payment, Doe releases and forever discharges Roe Holdings and Mr. Roe, and their respective officers, members, agents and insurers, from all claims, demands and causes of action arising out …"}, {"page": 1, "line": 22, "cite": "p. 1:22", "quote": "discharges Roe Holdings and Mr. Roe, and their respective officers, members, agents and insurers, from all claims, demands and causes of action arising out of the Action. 3. Release by Roe Holdings. Roe Holdings releases and forever …"}, {"page": 1, "line": 25, "cite": "p. 1:25", "quote": "3. Release by Roe Holdings. Roe Holdings releases and forever discharges Doe, and her heirs and assigns, from all claims, demands and causes of action arising out of the Action. 4. Unknown Claims. Each Party waives the protection of …"}]}, {"id": "release_mutual", "group": "Release", "label": "Mutual release", "th": "สละสิทธิทั้งสองฝ่าย", "found": false, "hits": []}, {"id": "waiver_1542", "group": "Release", "label": "Waiver of Civil Code §1542 (unknown claims)", "th": "การสละสิทธิตามประมวลกฎหมายแพ่ง มาตรา 1542 (ข้อเรียกร้องที่ยังไม่รู้)", "found": true, "hits": [{"page": 1, "line": 28, "cite": "p. 1:28", "quote": "4. Unknown Claims. Each Party waives the protection of California Civil Code section 1542. 5. Dismissal. Within five (5) court days after receipt of the Settlement Payment, Doe shall file a request for dismissal of the complaint with …"}]}, {"id": "no_admission", "group": "Release", "label": "No admission of liability", "th": "ไม่ถือเป็นการยอมรับผิด", "found": false, "hits": []}, {"id": "dismissal", "group": "Dismissal", "label": "Dismissal of the case", "th": "การถอนฟ้อง", "found": true, "hits": [{"page": 1, "line": 30, "cite": "p. 1:30", "quote": "5. Dismissal. Within five (5) court days after receipt of the Settlement Payment, Doe shall file a request for dismissal of the complaint with prejudice, and Roe Holdings shall file a request for dismissal of the cross-complaint with …"}, {"page": 1, "line": 31, "cite": "p. 1:31", "quote": "file a request for dismissal of the complaint with prejudice, and Roe Holdings shall file a request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign a"}, {"page": 1, "line": 32, "cite": "p. 1:32", "quote": "request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign a quitclaim deed for the parcel described in Exhibit A before a notary public or, if she is"}]}, {"id": "dismissal_with_prejudice", "group": "Dismissal", "label": "Dismissal with prejudice", "th": "ถอนฟ้องแบบฟ้องใหม่ไม่ได้ (with prejudice)", "found": true, "hits": [{"page": 1, "line": 31, "cite": "p. 1:31", "quote": "file a request for dismissal of the complaint with prejudice, and Roe Holdings shall file a request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign a"}, {"page": 1, "line": 32, "cite": "p. 1:32", "quote": "request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign a quitclaim deed for the parcel described in Exhibit A before a notary public or, if she is"}]}, {"id": "dismissal_without_prejudice", "group": "Dismissal", "label": "Dismissal without prejudice", "th": "ถอนฟ้องแบบฟ้องใหม่ได้ (without prejudice)", "found": false, "hits": []}, {"id": "dismissal_complaint", "group": "Dismissal", "label": "Dismissal names the complaint", "th": "ระบุคำฟ้อง", "found": true, "hits": [{"page": 1, "line": 31, "cite": "p. 1:31", "quote": "file a request for dismissal of the complaint with prejudice, and Roe Holdings shall file a request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign a"}]}, {"id": "dismissal_cross_complaint", "group": "Dismissal", "label": "Dismissal names the cross-complaint", "th": "ระบุคำฟ้องแย้ง", "found": true, "hits": [{"page": 1, "line": 31, "cite": "p. 1:31", "quote": "file a request for dismissal of the complaint with prejudice, and Roe Holdings shall file a request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign a"}, {"page": 1, "line": 32, "cite": "p. 1:32", "quote": "request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign a quitclaim deed for the parcel described in Exhibit A before a notary public or, if she is"}]}, {"id": "request_for_dismissal", "group": "Dismissal", "label": "Request for dismissal: who files, and when", "th": "คำร้องขอถอนฟ้อง: ใครยื่น และเมื่อไร", "found": true, "hits": [{"page": 1, "line": 31, "cite": "p. 1:31", "quote": "file a request for dismissal of the complaint with prejudice, and Roe Holdings shall file a request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign a"}, {"page": 1, "line": 32, "cite": "p. 1:32", "quote": "request for dismissal of the cross-complaint with prejudice. 6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign a quitclaim deed for the parcel described in Exhibit A before a notary public or, if she is"}]}, {"id": "lis_pendens", "group": "Dismissal", "label": "Withdrawal of the lis pendens (recorded notice of the pending case)", "th": "การถอนประกาศคดีที่จดไว้กับที่ดิน (lis pendens)", "found": true, "hits": [{"page": 1, "line": 14, "cite": "p. 1:14", "quote": "B. Doe recorded a lis pendens against the parcel described in Exhibit A. 1. Settlement Payment. Roe Holdings shall pay Doe the sum of $120,000 (the \"Settlement Payment\") by wire transfer within twenty-one (21) calendar days after the …"}, {"page": 1, "line": 40, "cite": "p. 1:40", "quote": "7. Lis Pendens. Within ten (10) days after receipt of the Settlement Payment, Doe shall record a withdrawal of the lis pendens with the county recorder. 8. Enforcement. The Parties stipulate that the Court shall retain jurisdiction under …"}, {"page": 1, "line": 41, "cite": "p. 1:41", "quote": "record a withdrawal of the lis pendens with the county recorder. 8. Enforcement. The Parties stipulate that the Court shall retain jurisdiction under Code of Civil Procedure section 664.6 to enforce this Agreement. Each Party shall bear …"}]}, {"id": "property_instrument", "group": "Property", "label": "Transfer instrument (deed, assignment, bill of sale)", "th": "เอกสารโอนทรัพย์สิน (โฉนดโอน หนังสือโอนสิทธิ)", "found": true, "hits": [{"page": 1, "line": 34, "cite": "p. 1:34", "quote": "6. Quitclaim Deed. Within fourteen (14) days after the Effective Date, Doe shall sign a quitclaim deed for the parcel described in Exhibit A before a notary public or, if she is outside the United States, a consular officer, and shall send …"}, {"page": 1, "line": 35, "cite": "p. 1:35", "quote": "quitclaim deed for the parcel described in Exhibit A before a notary public or, if she is outside the United States, a consular officer, and shall send the signed deed to counsel for Roe Holdings by tracked courier. The outside date for …"}, {"page": 1, "line": 36, "cite": "p. 1:36", "quote": "outside the United States, a consular officer, and shall send the signed deed to counsel for Roe Holdings by tracked courier. The outside date for delivery of the deed is twenty-eight (28) days after the Effective Date."}, {"page": 1, "line": 37, "cite": "p. 1:37", "quote": "for Roe Holdings by tracked courier. The outside date for delivery of the deed is twenty-eight (28) days after the Effective Date. 7. Lis Pendens. Within ten (10) days after receipt of the Settlement Payment, Doe shall"}]}, {"id": "notarisation", "group": "Property", "label": "Notarisation, and how a signer abroad signs", "th": "การรับรองลายมือชื่อ และวิธีเซ็นเมื่อผู้เซ็นอยู่ต่างประเทศ", "found": true, "hits": [{"page": 1, "line": 35, "cite": "p. 1:35", "quote": "quitclaim deed for the parcel described in Exhibit A before a notary public or, if she is outside the United States, a consular officer, and shall send the signed deed to counsel for Roe Holdings by tracked courier. The outside date for …"}, {"page": 1, "line": 36, "cite": "p. 1:36", "quote": "outside the United States, a consular officer, and shall send the signed deed to counsel for Roe Holdings by tracked courier. The outside date for delivery of the deed is twenty-eight (28) days after the Effective Date."}]}, {"id": "recording", "group": "Property", "label": "Recording", "th": "การจดทะเบียนเอกสาร", "found": true, "hits": [{"page": 1, "line": 41, "cite": "p. 1:41", "quote": "record a withdrawal of the lis pendens with the county recorder. 8. Enforcement. The Parties stipulate that the Court shall retain jurisdiction under Code of Civil Procedure section 664.6 to enforce this Agreement. Each Party shall bear …"}]}, {"id": "tax_allocation", "group": "Tax", "label": "Tax allocation and tax advice", "th": "การจัดสรรภาษี และคำแนะนำด้านภาษี", "found": true, "hits": [{"page": 1, "line": 47, "cite": "p. 1:47", "quote": "9. Taxes. No Party makes a representation about the tax treatment of the Settlement Payment. 10. General. This Agreement is the entire agreement of the Parties. It is governed by the laws of the State of California. It may be signed in …"}]}, {"id": "tax_forms", "group": "Tax", "label": "Tax reporting forms", "th": "แบบฟอร์มรายงานภาษี", "found": true, "hits": [{"page": 1, "line": 19, "cite": "p. 1:19", "quote": "completed IRS Form W-9 to counsel for Roe Holdings. 2. Release by Doe. Upon receipt of the Settlement Payment, Doe releases and forever discharges Roe Holdings and Mr. Roe, and their respective officers, members, agents and"}]}, {"id": "confidentiality", "group": "Conduct after signing", "label": "Confidentiality", "th": "การรักษาความลับ", "found": false, "hits": []}, {"id": "non_disparagement", "group": "Conduct after signing", "label": "Non-disparagement", "th": "ข้อห้ามกล่าวให้ร้าย", "found": false, "hits": []}, {"id": "retained_jurisdiction", "group": "Enforcement", "label": "Court retains jurisdiction (CCP §664.6)", "th": "ศาลคงอำนาจบังคับตามข้อตกลง (CCP §664.6)", "found": true, "hits": [{"page": 1, "line": 43, "cite": "p. 1:43", "quote": "8. Enforcement. The Parties stipulate that the Court shall retain jurisdiction under Code of Civil Procedure section 664.6 to enforce this Agreement. Each Party shall bear its own attorneys' fees and costs."}, {"page": 1, "line": 44, "cite": "p. 1:44", "quote": "Civil Procedure section 664.6 to enforce this Agreement. Each Party shall bear its own attorneys' fees and costs. 9. Taxes. No Party makes a representation about the tax treatment of the Settlement Payment."}]}, {"id": "fees_costs", "group": "Enforcement", "label": "Fees and costs", "th": "ค่าทนายและค่าใช้จ่าย", "found": true, "hits": [{"page": 1, "line": 44, "cite": "p. 1:44", "quote": "Civil Procedure section 664.6 to enforce this Agreement. Each Party shall bear its own attorneys' fees and costs. 9. Taxes. No Party makes a representation about the tax treatment of the Settlement Payment."}, {"page": 1, "line": 45, "cite": "p. 1:45", "quote": "attorneys' fees and costs. 9. Taxes. No Party makes a representation about the tax treatment of the Settlement Payment."}]}, {"id": "liens", "group": "Enforcement", "label": "Liens", "th": "สิทธิยึดหน่วงหรือภาระติดพัน", "found": false, "hits": []}, {"id": "cure", "group": "Enforcement", "label": "Cure period after a default", "th": "ระยะเวลาแก้ไขเมื่อผิดนัด", "found": false, "hits": []}, {"id": "time_essence", "group": "Enforcement", "label": "Time is of the essence", "th": "กำหนดเวลาเป็นสาระสำคัญ", "found": true, "hits": [{"page": 1, "line": 51, "cite": "p. 1:51", "quote": "signature. Time is of the essence."}]}, {"id": "counterparts", "group": "Form of the agreement", "label": "Counterparts", "th": "ลงนามแยกฉบับได้", "found": true, "hits": [{"page": 1, "line": 50, "cite": "p. 1:50", "quote": "laws of the State of California. It may be signed in counterparts and by electronic signature. Time is of the essence."}]}, {"id": "e_signature", "group": "Form of the agreement", "label": "Electronic signature", "th": "ลายมือชื่ออิเล็กทรอนิกส์", "found": true, "hits": [{"page": 1, "line": 50, "cite": "p. 1:50", "quote": "laws of the State of California. It may be signed in counterparts and by electronic signature. Time is of the essence."}]}, {"id": "integration", "group": "Form of the agreement", "label": "Integration (the whole agreement is in this document)", "th": "ข้อตกลงทั้งหมดอยู่ในเอกสารนี้", "found": true, "hits": [{"page": 1, "line": 49, "cite": "p. 1:49", "quote": "10. General. This Agreement is the entire agreement of the Parties. It is governed by the laws of the State of California. It may be signed in counterparts and by electronic signature. Time is of the essence."}]}, {"id": "governing_law", "group": "Form of the agreement", "label": "Governing law", "th": "กฎหมายที่ใช้บังคับ", "found": true, "hits": [{"page": 1, "line": 49, "cite": "p. 1:49", "quote": "10. General. This Agreement is the entire agreement of the Parties. It is governed by the laws of the State of California. It may be signed in counterparts and by electronic signature. Time is of the essence."}, {"page": 1, "line": 50, "cite": "p. 1:50", "quote": "laws of the State of California. It may be signed in counterparts and by electronic signature. Time is of the essence."}]}], "release": {"clauses": [{"page": 1, "line": 21, "cite": "p. 1:21", "quote": "2. Release by Doe. Upon receipt of the Settlement Payment, Doe releases and forever discharges Roe Holdings and Mr. Roe, and their respective officers, members, agents and insurers, from all claims, demands and causes of action arising out of the Action.", "releasing": ["Jane Doe"], "released": ["Roe Holdings, LLC", "Richard Roe"], "classes": ["agents", "insurers", "officers", "members"], "each_other": false}, {"page": 1, "line": 25, "cite": "p. 1:25", "quote": "3. Release by Roe Holdings. Roe Holdings releases and forever discharges Doe, and her heirs and assigns, from all claims, demands and causes of action arising out of the Action.", "releasing": ["Roe Holdings, LLC"], "released": ["Jane Doe"], "classes": ["heirs", "assigns"], "each_other": false}], "released": ["Roe Holdings, LLC", "Richard Roe", "Jane Doe"], "releasing": ["Jane Doe", "Roe Holdings, LLC"], "classes": ["agents", "insurers", "officers", "members", "heirs", "assigns"], "mutual": null, "defined": [{"name": "Jane Doe", "aliases": ["Doe"]}, {"name": "Roe Holdings, LLC", "aliases": ["Roe Holdings"]}, {"name": "Richard Roe", "aliases": ["Mr. Roe"]}]}, "problems": []}}, "samples": ["brief 2026-09-21.txt", "closing list 2026-09-21.txt", "ladder 2026-08-28.txt", "ladder 2026-09-21.txt", "mediation-statement.pdf", "mediation-statement.txt", "settlement.ics", "terms check.txt"]}; // scripts/make_site.py puts the example matter here for the public page
+  var T = {
+    title: ["Chirograph — settlement desk", "Chirograph — โต๊ะงานยอมความ"],
+    reload: ["Reload", "โหลดใหม่"],
+    nomatter: ["No matter folder is open. Start the desk with --matter and a folder.", "ยังไม่ได้เปิดแฟ้มคดี เริ่มโต๊ะงานด้วย --matter ตามด้วยโฟลเดอร์"],
+    courtdate: ["Court date", "วันที่ตามเวลาศาล"],
+    ladder: ["Ladder", "ลำดับข้อเสนอ"],
+    plaintiff: ["Plaintiff", "โจทก์"], defendant: ["Defendant", "จำเลย"], neutral: ["Neutral", "คนกลาง"],
+    tapbar: ["Tap a bar for its terms.", "แตะแถบเพื่อดูเงื่อนไข"],
+    lastpos: ["last position", "จุดยืนล่าสุด"],
+    gap: ["Gap", "ส่วนต่าง"], midpoint: ["Midpoint", "จุดกึ่งกลาง"], accepted: ["Accepted", "ตอบรับแล้ว"],
+    clocks: ["Clocks running", "เวลาที่ยังเดินอยู่"], none: ["None.", "ไม่มี"],
+    closing: ["Closing list", "รายการหลังเซ็นข้อตกลง"],
+    terms: ["Terms check", "ตรวจข้อสัญญา"],
+    readfile: ["Read file", "อ่านไฟล์"], readpaste: ["Read pasted text", "อ่านข้อความที่วาง"],
+    pastehere: ["Or paste the agreement text here", "หรือวางข้อความข้อตกลงตรงนี้"],
+    only: ["Release runs to one name only (optional)", "สละสิทธิให้ชื่อเดียวเท่านั้น (เว้นว่างได้)"],
+    brief: ["Brief", "สรุปวันนี้"],
+    english: ["Dates and their arithmetic print in English, in the words of the rules.", "วันที่และวิธีนับพิมพ์เป็นภาษาอังกฤษ ตามถ้อยคำของกฎ"],
+    foot: ["This window reads the matter folder on this computer and shows it. It gives dates and document text.", "หน้าต่างนี้อ่านแฟ้มคดีในเครื่องนี้แล้วแสดงผล ให้ข้อมูลวันที่และข้อความในเอกสาร"],
+    termsline: ["Terms", "เงื่อนไข"], document: ["Document", "เอกสาร"], flags: ["Flag", "ข้อสังเกต"],
+    found: ["FOUND", "พบ"], notfound: ["not found in this text", "ไม่พบในข้อความนี้"],
+    releaseclose: ["Release, read closely", "ข้อสละสิทธิ อ่านละเอียด"],
+    releasing: ["releasing", "ผู้สละสิทธิ"], released: ["released", "ผู้ได้รับการสละสิทธิ"], classes: ["classes also released", "กลุ่มคนที่รวมอยู่ด้วย"],
+    mutual: ["Mutual release wording", "ถ้อยคำสละสิทธิทั้งสองฝ่าย"],
+    noclause: ["A release clause with named parties: not found in this text", "ข้อสละสิทธิที่ระบุชื่อคู่ความ: ไม่พบในข้อความนี้"],
+    pagesread: ["pages read", "หน้าที่อ่านได้"], noname: ["no name read", "อ่านชื่อไม่ได้"],
+    noevidence: ["no evidence on this disk", "ยังไม่มีหลักฐานในเครื่องนี้"],
+    evidence: ["evidence", "หลักฐาน"],
+    today: ["today", "วันนี้"], indays: ["in {n} days", "อีก {n} วัน"], pastdays: ["{n} days past", "เลยมา {n} วัน"],
+    nofiles: ["No file in the matter's agreements folder", "ยังไม่มีไฟล์ในโฟลเดอร์ agreements"],
+    working: ["Reading…", "กำลังอ่าน…"],
+    answers: ["Answers", "ตอบข้อเสนอ"],
+    demo1: ["This page shows Chirograph on a made-up matter. The day is fixed at the court date shown above, so the clocks and the day counts stand still.", "หน้านี้แสดง Chirograph กับคดีสมมติ วันที่ถูกตั้งไว้ตามวันที่ศาลด้านบน เวลาที่เดินอยู่และจำนวนวันจึงไม่เปลี่ยน"],
+    demo2: ["The kit runs on a Mac and reads your own matter folder there, your agreement included.", "ชุดโปรแกรมทำงานบนเครื่อง Mac และอ่านแฟ้มคดีของคุณที่เครื่องนั้น รวมถึงข้อตกลงของคุณ"],
+    getkit: ["Get the kit", "รับชุดโปรแกรม"],
+    demofiles: ["Files the kit wrote for this matter:", "ไฟล์ที่ชุดโปรแกรมเขียนให้คดีนี้:"]
+  };
+  var STATUS = {
+    "OPEN": ["OPEN", "ยังเปิดอยู่"], "LAPSED": ["LAPSED", "หมดเวลาแล้ว"], "REJECTED": ["REJECTED", "ถูกปฏิเสธ"],
+    "COUNTERED": ["COUNTERED", "มีข้อเสนอกลับ"], "ACCEPTED": ["ACCEPTED", "ตอบรับแล้ว"], "WITHDRAWN": ["WITHDRAWN", "ถอนแล้ว"],
+    "UNSOURCED": ["UNSOURCED", "ยังไม่มีเอกสาร"],
+    "BUILT": ["BUILT", "ทำเอกสารแล้ว"], "SIGNED": ["SIGNED", "เซ็นแล้ว"], "SERVED": ["SERVED", "ส่งแล้ว"], "FILED": ["FILED", "ยื่นแล้ว"],
+    "DONE": ["DONE", "เสร็จแล้ว"], "ON CALENDAR": ["ON CALENDAR", "ยังอยู่ในนัดศาล"], "OFF CALENDAR": ["OFF CALENDAR", "พ้นนัดศาลแล้ว"],
+    "not started": ["not started", "ยังไม่เริ่ม"]
+  };
+  var KIND = { "letter": ["letter", "จดหมาย"], "998": ["statutory offer (CCP §998)", "ข้อเสนอตามกฎหมาย (CCP §998)"],
+               "counter": ["counter", "ข้อเสนอกลับ"], "mediator": ["mediator's proposal", "ข้อเสนอของคนกลาง"] };
+  var lang = 0, S = null, lastTerms = null;
+  try { if (localStorage.getItem("chirograph-lang") === "th") lang = 1; } catch (e) {}
+
+  function t(k) { return (T[k] || [k, k])[lang]; }
+  function st(k) { return (STATUS[k] || [k, k])[lang]; }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function api(path, opts) {
+    if (DEMO) {
+      var f = /[?&]file=([^&]*)/.exec(path);
+      return Promise.resolve(JSON.parse(JSON.stringify(f ? DEMO.terms[decodeURIComponent(f[1])] : DEMO.state)));
+    }
+    opts = opts || {}; opts.headers = Object.assign({ "X-Chirograph-Token": TOKEN }, opts.headers || {});
+    return fetch(path, opts).then(function (r) { return r.json(); });
+  }
+  function days(n) {
+    if (n === 0) return t("today");
+    return (n > 0 ? t("indays") : t("pastdays")).replace("{n}", Math.abs(n));
+  }
+
+  function paintStatic() {
+    document.documentElement.lang = lang ? "th" : "en";
+    document.getElementById("lang").textContent = lang ? "English" : "ไทย";
+    document.getElementById("title").textContent = t("title");
+    document.title = t("title");
+    Array.prototype.forEach.call(document.querySelectorAll("[data-i]"), function (n) { n.textContent = t(n.getAttribute("data-i")); });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-ph]"), function (n) { n.placeholder = t(n.getAttribute("data-ph")); });
+  }
+
+  function paint() {
+    paintStatic();
+    var has = S && S.matter;
+    document.getElementById("empty").hidden = !!has;
+    ["s-ladder", "s-clocks", "s-closing", "s-terms", "s-brief"].forEach(function (id) { document.getElementById(id).hidden = !has; });
+    if (!has) { document.getElementById("matterline").textContent = ""; return; }
+    document.getElementById("matterline").textContent = S.matter.name + (S.matter.case_number ? " · " + S.matter.case_number : "") +
+      " · " + t("courtdate") + " " + S.today_text;
+
+    // ladder
+    var box = document.getElementById("offers"); box.textContent = "";
+    S.offers.forEach(function (o) {
+      var wrap = el("div", "offer");
+      var head = el("div", "who", o.id + " · " + o.made_text + " · " + o.from + " → " + o.to + " · " + (KIND[o.kind] || [o.kind, o.kind])[lang]);
+      wrap.appendChild(head);
+      var track = el("div", "track");
+      var pct = S.max_amount && o.amount != null ? Math.max(18, Math.round(100 * o.amount / S.max_amount)) : 18;
+      var bar = el("button", "bar " + (o.side || "neutral"), o.amount_text);
+      bar.type = "button"; bar.style.width = pct + "%";
+      bar.setAttribute("aria-expanded", "false");
+      track.appendChild(bar); wrap.appendChild(track);
+      var chips = el("div");
+      chips.appendChild(el("span", "chip " + (o.status_now === "OPEN" || o.status_now === "ACCEPTED" ? "gold" : ""), st(o.status_now)));
+      wrap.appendChild(chips);
+      var det = el("div", "detail"); det.hidden = true;
+      if (o.answers) det.appendChild(el("p", null, t("answers") + " " + o.answers));
+      if (o.terms) det.appendChild(el("p", null, t("termsline") + ": " + o.terms));
+      if (o.document) det.appendChild(el("p", null, t("document") + ": " + o.document));
+      if (o.clock) {
+        det.appendChild(el("p", "line", o.status_now === "LAPSED" ? o.clock.line.replace("Lapses", "Lapsed") : o.clock.line));
+        if (o.clock.both) det.appendChild(el("p", "line", o.clock.both));
+      }
+      (o.flags || []).forEach(function (f) { det.appendChild(el("p", "flag", f)); });
+      if (!det.childNodes.length) det.appendChild(el("p", null, "—"));
+      wrap.appendChild(det);
+      bar.addEventListener("click", function () { det.hidden = !det.hidden; bar.setAttribute("aria-expanded", String(!det.hidden)); });
+      box.appendChild(wrap);
+    });
+    var pos = document.getElementById("positions"); pos.textContent = "";
+    function card(label, value, small) {
+      var c = el("div", "box"); c.appendChild(el("div", null, label)); c.appendChild(el("div", "num", value));
+      if (small) c.appendChild(el("div", null, small)); pos.appendChild(c);
+    }
+    var P = S.positions;
+    if (P.plaintiff) card(t("plaintiff") + " — " + t("lastpos"), P.plaintiff.amount_text, P.plaintiff.id + " · " + st(P.plaintiff.status));
+    if (P.defendant) card(t("defendant") + " — " + t("lastpos"), P.defendant.amount_text, P.defendant.id + " · " + st(P.defendant.status));
+    if (P.gap != null) { card(t("gap"), P.gap_text); card(t("midpoint"), P.midpoint_text); }
+    if (P.accepted) card(t("accepted"), P.accepted.amount_text, P.accepted.id);
+
+    // clocks
+    var cl = document.getElementById("clocks"); cl.textContent = "";
+    var running = S.offers.filter(function (o) { return o.running; });
+    if (!running.length) cl.appendChild(el("p", null, t("none")));
+    running.forEach(function (o) {
+      var b = el("div", "box");
+      b.appendChild(el("div", "num", o.id + " · " + o.amount_text));
+      b.appendChild(el("p", "line", o.clock.line));
+      if (o.clock.both) b.appendChild(el("p", "line", o.clock.both));
+      (o.clock.notes || []).forEach(function (n) { b.appendChild(el("p", null, n)); });
+      cl.appendChild(b);
+    });
+
+    // closing
+    var c = document.getElementById("closing"); c.textContent = "";
+    if (!S.closing.length) c.appendChild(el("p", null, t("none")));
+    S.closing.forEach(function (k) {
+      var b = el("div", "box");
+      var h = el("h3", null, k.title); b.appendChild(h);
+      if (k.date_text) b.appendChild(el("div", "num", k.date_text + (k.time ? " " + k.time : "") + (k.finished || k.days == null ? "" : " · " + days(k.days))));
+      b.appendChild(el("p", "line", k.line));
+      if (k.both) b.appendChild(el("p", "line", k.both));
+      var chips = el("div");
+      if (k.kind === "hearing" && !k.states["OFF CALENDAR"]) chips.appendChild(el("span", "chip gold", st("ON CALENDAR")));
+      k.chain.forEach(function (s) {
+        var rec = k.states[s];
+        if (rec) chips.appendChild(el("span", "chip on", st(s) + " · " + rec.on));
+        else if (s === k.next_state) chips.appendChild(el("span", "chip next", st(s) + ": " + t("noevidence")));
+        else chips.appendChild(el("span", "chip", st(s)));
+      });
+      b.appendChild(chips);
+      Object.keys(k.states).forEach(function (s) { b.appendChild(el("p", null, st(s) + " — " + t("evidence") + ": " + k.states[s].evidence)); });
+      (k.notes || []).forEach(function (n) { b.appendChild(el("p", null, n)); });
+      (k.flags || []).forEach(function (f) { b.appendChild(el("p", "flag", f)); });
+      c.appendChild(b);
+    });
+
+    // terms
+    var sel = document.getElementById("file"); var prev = sel.value; sel.textContent = "";
+    if (!S.agreements.length) { var o0 = el("option", null, t("nofiles")); o0.value = ""; sel.appendChild(o0); }
+    S.agreements.forEach(function (f) { var o = el("option", null, f); o.value = f; sel.appendChild(o); });
+    if (prev) sel.value = prev;
+    document.getElementById("checkfile").disabled = !S.agreements.length;
+    document.getElementById("brief").textContent = S.brief;
+    if (lastTerms) paintTerms(lastTerms);
+  }
+
+  function paintTerms(r) {
+    lastTerms = r;
+    var out = document.getElementById("termsout"); out.textContent = "";
+    if (r.error) { out.appendChild(el("p", "flag", r.error)); return; }
+    out.appendChild(el("p", null, r.file + " · " + r.pages + " " + t("pagesread")));
+    (r.problems || []).forEach(function (p) { out.appendChild(el("p", "flag", p)); });
+    r.groups.forEach(function (g) {
+      var rows = r.terms.filter(function (x) { return x.group === g; });
+      if (!rows.length) return;
+      out.appendChild(el("h3", null, g));
+      rows.forEach(function (x) {
+        var d = el("div", "term");
+        var label = lang && x.th ? x.th : x.label;
+        if (x.found) {
+          d.appendChild(el("div", "found", "✓ " + t("found") + " · " + label + " · " + x.hits.map(function (h) { return h.cite; }).slice(0, 4).join(", ")));
+          d.appendChild(el("div", "quote", "“" + x.hits[0].quote + "”"));
+        } else {
+          d.appendChild(el("div", "notfound", "— " + label + ": " + t("notfound")));
+        }
+        out.appendChild(d);
+      });
+    });
+    out.appendChild(el("h3", null, t("releaseclose")));
+    var rel = r.release;
+    if (!rel.clauses.length) out.appendChild(el("p", null, t("noclause")));
+    rel.clauses.forEach(function (c) {
+      var b = el("div", "box");
+      b.appendChild(el("div", "found", c.cite));
+      b.appendChild(el("div", "quote", "“" + c.quote + "”"));
+      b.appendChild(el("p", null, t("releasing") + ": " + (c.releasing.join("; ") || t("noname"))));
+      b.appendChild(el("p", null, t("released") + ": " + (c.released.join("; ") || t("noname"))));
+      if (c.classes.length) b.appendChild(el("p", null, t("classes") + ": " + c.classes.join(", ")));
+      out.appendChild(b);
+    });
+    out.appendChild(el("p", null, t("mutual") + ": " + (rel.mutual ? t("found") + " " + rel.mutual.cite : t("notfound"))));
+  }
+
+  function load() {
+    api("/api/state").then(function (s) { S = s; paint(); }).catch(function (e) {
+      S = null; paint(); document.getElementById("empty").hidden = false; document.getElementById("empty").textContent = String(e);
+    });
+  }
+
+  document.getElementById("lang").addEventListener("click", function () {
+    lang = lang ? 0 : 1; try { localStorage.setItem("chirograph-lang", lang ? "th" : "en"); } catch (e) {}
+    paint();
+  });
+  document.getElementById("reload").addEventListener("click", load);
+  document.getElementById("checkfile").addEventListener("click", function () {
+    var f = document.getElementById("file").value; if (!f) return;
+    var only = document.getElementById("only").value.trim();
+    document.getElementById("termsout").textContent = t("working");
+    api("/api/terms?file=" + encodeURIComponent(f) + (only ? "&release_only=" + encodeURIComponent(only) : "")).then(paintTerms);
+  });
+  document.getElementById("checkpaste").addEventListener("click", function () {
+    var text = document.getElementById("paste").value; if (!text.trim()) return;
+    var only = document.getElementById("only").value.trim();
+    document.getElementById("termsout").textContent = t("working");
+    api("/api/terms", { method: "POST", headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ text: text, release_only: only || null }) }).then(paintTerms);
+  });
+  if (DEMO) {
+    document.body.className = "demo"; document.getElementById("demobar").hidden = false; document.getElementById("kit").href = DEMO.kit;
+    DEMO.samples.forEach(function (n) {
+      var li = el("li"), a = el("a", null, n); a.href = "samples/" + encodeURIComponent(n); a.target = "_blank"; li.appendChild(a);
+      document.getElementById("samples").appendChild(li);
+    });
+  }
+  paintStatic();
+  load();
+})();
+</script>
+</body>
+</html>

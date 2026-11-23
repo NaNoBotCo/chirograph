@@ -1,0 +1,153 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Chirograph//settlement track//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:closing-notice@chirograph
+DTSTAMP:20260921T160000Z
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260918
+SUMMARY:[SERVED] Notice of settlement of the entire case
+DESCRIPTION:Due Thu Sep 17 2026 — settled Sep 17\; written notice is file
+ d and served immediately (Cal. Rules of Court\, rule 3.1385(a)(1)).\nNote:
+  Case management conference on Thu Sep 24 2026 falls within 10 days of set
+ tlement: the rule also calls for oral notice at once (Cal. Rules of Court\
+ , rule 3.1385(a)(1)).\nEnd of Thu Sep 17 2026 court time (23:59) = Fri Sep
+  18 2026 07:59 in Europe/London.\nState: SERVED\; next FILED: no evidence 
+ on this disk
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:closing-payment@chirograph
+DTSTAMP:20260921T160000Z
+DTSTART;VALUE=DATE:20261008
+DTEND;VALUE=DATE:20261009
+SUMMARY:[not started] Payment of $120\,000 by Roe Holdings\, LLC (wire)
+DESCRIPTION:Due Thu Oct 8 2026 — signed Sep 17 + 21 days (Agreement §1) 
+ = Thu Oct 8.\nEnd of Thu Oct 8 2026 court time (23:59) = Fri Oct 9 2026 07
+ :59 in Europe/London.\nState: not started\; next DONE: no evidence on this
+  disk
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:closing-wire@chirograph
+DTSTAMP:20260921T160000Z
+DTSTART;VALUE=DATE:20260924
+DTEND;VALUE=DATE:20260925
+SUMMARY:[SERVED] Wire instructions to the paying side
+DESCRIPTION:Due Thu Sep 24 2026 — signed Sep 17 + 7 days (Agreement §1) 
+ = Thu Sep 24.\nEnd of Thu Sep 24 2026 court time (23:59) = Fri Sep 25 2026
+  07:59 in Europe/London.\nState: SERVED\; next DONE: no evidence on this d
+ isk
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:closing-tax@chirograph
+DTSTAMP:20260921T160000Z
+DTSTART;VALUE=DATE:20260924
+DTEND;VALUE=DATE:20260925
+SUMMARY:[not started] IRS Form W-9 to the paying side
+DESCRIPTION:Due Thu Sep 24 2026 — signed Sep 17 + 7 days (Agreement §1) 
+ = Thu Sep 24.\nEnd of Thu Sep 24 2026 court time (23:59) = Fri Sep 25 2026
+  07:59 in Europe/London.\nState: not started\; next BUILT: no evidence on 
+ this disk
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:closing-instrument-sign@chirograph
+DTSTAMP:20260921T160000Z
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+SUMMARY:[not started] Quitclaim deed signed before a notary or\, for a sign
+ er abroad\, a consular officer
+DESCRIPTION:Due Thu Oct 1 2026 — signed Sep 17 + 14 days (Agreement §6) 
+ = Thu Oct 1.\nEnd of Thu Oct 1 2026 court time (23:59) = Fri Oct 2 2026 07
+ :59 in Europe/London.\nState: not started\; next BUILT: no evidence on thi
+ s disk
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:closing-instrument-dispatch@chirograph
+DTSTAMP:20260921T160000Z
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+SUMMARY:[not started] Quitclaim deed dispatched by tracked courier
+DESCRIPTION:Due Thu Oct 1 2026 — signed Sep 17 + 14 days (Agreement §6) 
+ = Thu Oct 1.\nEnd of Thu Oct 1 2026 court time (23:59) = Fri Oct 2 2026 07
+ :59 in Europe/London.\nState: not started\; next SERVED: no evidence on th
+ is disk
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:closing-instrument-outside@chirograph
+DTSTAMP:20260921T160000Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:[not started] Quitclaim deed: outside date for delivery
+DESCRIPTION:Outside date Thu Oct 15 2026 — signed Sep 17 + 28 days (Agree
+ ment §6) = Thu Oct 15.\nEnd of Thu Oct 15 2026 court time (23:59) = Fri O
+ ct 16 2026 07:59 in Europe/London.\nState: not started\; next DONE: no evi
+ dence on this disk
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:closing-lis-pendens@chirograph
+DTSTAMP:20260921T160000Z
+DTSTART;VALUE=DATE:20261018
+DTEND;VALUE=DATE:20261019
+SUMMARY:[not started] Withdrawal of the lis pendens (the recorded notice of
+  the pending case)\, recorded
+DESCRIPTION:Due Sun Oct 18 2026 — payment due Oct 8 + 10 days (Agreement 
+ §7) = Sun Oct 18.\nNote: Sun Oct 18 2026 is a Sunday\; this date does not
+  roll. The next court day is Mon Oct 19 2026.\nNote: The agreement's own c
+ ounting clause decides whether this date moves.\nEnd of Sun Oct 18 2026 co
+ urt time (23:59) = Mon Oct 19 2026 07:59 in Europe/London.\nState: not sta
+ rted\; next BUILT: no evidence on this disk
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:closing-dismissal@chirograph
+DTSTAMP:20260921T160000Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:[not started] Request for dismissal of the entire case
+DESCRIPTION:Due Mon Nov 2 2026 — settled Sep 17 + 45 days (Cal. Rules of 
+ Court\, rule 3.1385(b)) = Sun Nov 1\; Sun Nov 1 is a Sunday\; rolls to Mon
+  Nov 2 (Cal. Rules of Court\, rule 1.10(b)).\nNote: If the case cannot be 
+ dismissed in time\, a notice and declaration asking for more time: Last da
+ y Mon Oct 26 2026 — last day to request dismissal Mon Nov 2 − 5 court 
+ days (Cal. Rules of Court\, rule 3.1385(e)) = Mon Oct 26.\nEnd of Mon Nov 
+ 2 2026 court time (23:59) = Tue Nov 3 2026 07:59 in Europe/London.\nState:
+  not started\; next BUILT: no evidence on this disk
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:closing-retain@chirograph
+DTSTAMP:20260921T160000Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:[not started] Stipulation for the court to retain jurisdiction to e
+ nforce the settlement
+DESCRIPTION:Due Mon Nov 2 2026 — on file before or with the request for d
+ ismissal\; the court may dismiss without prejudice and retain jurisdiction
+  when the parties stipulate in writing or orally before the court (CCP §6
+ 64.6(a)).\nEnd of Mon Nov 2 2026 court time (23:59) = Tue Nov 3 2026 07:59
+  in Europe/London.\nState: not started\; next BUILT: no evidence on this d
+ isk
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:closing-hearing-1@chirograph
+DTSTAMP:20260921T160000Z
+DTSTART:20260924T160000Z
+DTEND:20260924T170000Z
+SUMMARY:[ON CALENDAR] Case management conference
+DESCRIPTION:Thu Sep 24 2026 09:00 court time — set by received/2026-08-20
+  notice of case management conference.txt. Stays ON CALENDAR until an orde
+ r or the court's page\, saved to disk\, shows it is off.\nThu Sep 24 2026 
+ 09:00 court time = Thu Sep 24 2026 17:00 in Europe/London.\nState: ON CALE
+ NDAR\; next OFF CALENDAR: no evidence on this disk
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+# Chirograph · ไคโรกราฟ
+
+A settlement desk for a civil case in California state court, in English and Thai. A kit for a Mac (Python 3.9). This page shows it on a fictional matter, Jane Doe v. Roe Holdings, LLC, with the day fixed at 21 September 2026.
+
+- Offer ladder: each offer with its date, amount, terms and the file that made it; each side's last position, the gap and the midpoint; an offer with no document on disk shows UNSOURCED.
+- Clocks with their arithmetic: a Code of Civil Procedure section 998 offer with no stated expiry gets the 30-day statutory clock; each date prints in court time and in the reader's time zone.
+- Terms check: reads an agreement against a list of 31 terms (payment, release, Civil Code section 1542 waiver, dismissal, lis pendens, deed and notary, tax forms, confidentiality, CCP section 664.6 and more); each is quoted with page and line, or marked "not found in this text".
+- Release reader: lists who each release clause names; told that the release runs to one name, it flags any other.
+- Closing list: notice of settlement, dismissal, payment, deed, hearings on calendar; a task moves from BUILT to SIGNED, SERVED, FILED and DONE only with a file on disk as evidence.
+- Mediation statement as text and PDF, checked against a per-matter muzzle list; a brief; a calendar file.
+- The rule table carries, for each entry, where and when it was read.
+
+The kit gives dates and document text.
+
+Kit: https://github.com/NaNoBotCo/chirograph
+Sibling: Cursitor, a litigation desk for Claude Code, https://nanobotco.github.io/cursitor/
+
+Text CC BY 4.0, code MIT.

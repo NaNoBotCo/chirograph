@@ -1,0 +1,75 @@
+CHIROGRAPH — HOW TO SET IT UP ON A MAC
+
+Chirograph is a set of tools for settling a court case: it lists the offers and their clocks, reads a settlement agreement against a list of terms, makes the list of things to do after signing, and builds a mediation statement. It runs on your Mac.
+
+You need: a Mac, about 10 minutes, and this folder.
+
+STEP 1. Put the folder somewhere you will find it.
+
+Drag the "chirograph" folder into your Documents folder.
+
+STEP 2. Open Terminal.
+
+Press Command and Space together, type Terminal, press Return. A window with text opens.
+
+STEP 3. Install the two parts Chirograph uses.
+
+Copy this line, paste it into Terminal, press Return:
+
+python3 -m pip install --user pypdf reportlab
+
+If the Mac asks to install "command line developer tools", click Install and wait. Then run the line again.
+
+STEP 4. Try the example.
+
+Copy these two lines one at a time, paste each into Terminal, press Return after each:
+
+cd ~/Documents/chirograph
+
+bin/chirograph offer list examples/doe-v-roe --today 2026-08-28
+
+A list of four offers prints, with the date each one lapses and how that date was counted. The example case, Jane Doe v. Roe Holdings, LLC, is made up.
+
+STEP 5. Open the window with big type.
+
+bin/chirograph desk --matter examples/doe-v-roe
+
+Your browser opens a page with the offers drawn as bars, the clocks, and the list of things to do after signing. The button at the top right switches between English and Thai. To stop it, click the Terminal window and press Control and C together.
+
+STEP 6. Start your own case folder.
+
+bin/chirograph new-matter ~/Documents/my-case --plaintiff "Your Name" --defendant "Their Name" --case-no 26CV000000 --county Alameda --reader-tz Europe/London
+
+Change the names, the case number, the county and the time zone to yours. A time zone is written like America/New_York or Asia/Bangkok.
+
+STEP 7. Enter an offer.
+
+Save the letter or the offer as a file inside the "offers" folder of your case folder first. Then:
+
+cd ~/Documents/my-case
+
+~/Documents/chirograph/bin/chirograph offer add --made 2026-08-12 --from "Their Name" --to "Your Name" --kind 998 --amount 60000 --method email --document "offers/the file you saved.pdf"
+
+"998" is a statutory offer to compromise under California Code of Civil Procedure section 998: a written offer to let judgment be entered on stated terms. The other kinds are letter, counter and mediator.
+
+EACH MORNING
+
+~/Documents/chirograph/bin/chirograph brief
+
+It prints what is dated today, what is dated in the next 7 days, which clocks are running, and which tasks have no file on this disk showing they were done.
+
+WHAT THE WORDS MEAN
+
+OPEN: the offer's document is on this disk and its clock has not run out.
+
+UNSOURCED: no document is named for the offer, or the file is not on this disk.
+
+LAPSED: the offer's clock ran out.
+
+BUILT, SIGNED, SERVED, FILED, DONE: the steps a court paper goes through. A step is entered with a file that shows it, such as the court's receipt or the sent message saved as text.
+
+ON CALENDAR: a hearing the court has set. It stays on the list until an order or the court's own page, saved as a file, shows it is off.
+
+"not found in this text": the words Chirograph looks for were not in the agreement text it read. The agreement may say the same thing in other words.
+
+Chirograph gives dates and document text. The rules it counts with are in the file rules/ca_settlement.json, each with the web address where its text was read and the date. Rules change; read a rule again before relying on its date.
